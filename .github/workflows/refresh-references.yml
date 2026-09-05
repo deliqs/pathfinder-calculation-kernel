@@ -1,0 +1,41 @@
+name: Refresh JPL reference candidate
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  refresh-jpl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: 1
+      DOTNET_NOLOGO: true
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          global-json-file: global.json
+
+      - name: Restore locked dependencies
+        run: dotnet restore PathFinder.CalculationKernel.slnx --locked-mode
+
+      - name: Write JPL candidate and drift report
+        run: >-
+          dotnet run --project tools/PathFinder.AccuracyBenchmark
+          -- refresh-jpl
+          --output "${{ runner.temp }}/reference-candidate"
+
+      - name: Upload candidate without modifying the frozen dataset
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: jpl-reference-candidate
+          path: ${{ runner.temp }}/reference-candidate
+          if-no-files-found: error

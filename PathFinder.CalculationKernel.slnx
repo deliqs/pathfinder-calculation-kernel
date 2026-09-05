@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/PathFinder.CalculationKernel/PathFinder.CalculationKernel.csproj" />
+  </Folder>
+  <Folder Name="/tools/">
+    <Project Path="tools/PathFinder.AccuracyBenchmark/PathFinder.AccuracyBenchmark.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/PathFinder.AccuracyBenchmark.Tests/PathFinder.AccuracyBenchmark.Tests.csproj" />
+    <Project Path="tests/PathFinder.CalculationKernel.Tests/PathFinder.CalculationKernel.Tests.csproj" />
+    <Project Path="tests/PathFinder.Repository.Tests/PathFinder.Repository.Tests.csproj" />
+  </Folder>
+</Solution>

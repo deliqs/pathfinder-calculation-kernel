@@ -1,0 +1,29 @@
+{
+  "fixtures": [
+    {
+      "fileName": "house-cusps-swiss-oracle.csv",
+      "sha256": "fec07f551732958612343fd291751c97d02ef38ded2913ff34b8772128507c28",
+      "rowCount": 108
+    },
+    {
+      "fileName": "house-cusps-swiss-oracle-london2000.csv",
+      "sha256": "396de72e923d0fcbec390e67288bb82c668ebb01d7b34fa89c710083c4e71119",
+      "rowCount": 3
+    },
+    {
+      "fileName": "house-cusps-swiss-holdout.csv",
+      "sha256": "907ba5f573530674b2b28efe4c63c0e447f2bf8845100daefc94070fe7ea9857",
+      "rowCount": 186
+    }
+  ],
+  "generator": "Swiss Ephemeris 2.10.03 via pyswisseph 2.10.3.2",
+  "invocation": "swe.houses_armc(ramc, lat, 23.4393, code) for MC/latitude rows and swe.houses(jd, lat, lon, code) at JD 2451544.5 for London",
+  "rowCounts": {
+    "swissComparisonRows": 249,
+    "mcLatitudeRows": 246,
+    "londonRows": 3,
+    "fallbackRows": 48
+  },
+  "fallback": "Rows at latitudes beyond a system's fallback threshold assert Porphyry equality instead.",
+  "scope": "These are test-only fixtures, not part of the frozen benchmark reference bundle."
+}

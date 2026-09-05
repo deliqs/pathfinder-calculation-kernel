@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/deliqs/pathfinder-calculation-kernel/benchmark/schemas/reference-manifest.schema.json",
+  "title": "PathFinder benchmark reference manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "datasetRevision", "jpl", "swiss", "tzdb"],
+  "properties": {
+    "schemaVersion": { "const": 2 },
+    "datasetRevision": { "type": "string" },
+    "jpl": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["apiSource", "apiVersion", "endpoint", "requests"],
+      "properties": {
+        "apiSource": { "const": "NASA/JPL Horizons API" },
+        "apiVersion": { "type": "string" },
+        "endpoint": { "const": "https://ssd.jpl.nasa.gov/api/horizons.api" },
+        "requests": { "type": "array", "items": { "$ref": "#/$defs/jplRequest" } }
+      }
+    },
+    "swiss": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requiredVersion", "distribution", "sourceRepository", "sourceTag", "sourceCommit", "buildTarget", "buildCommand", "executableSha256", "environment", "versionInvocation", "versionOutput", "requests"],
+      "properties": {
+        "requiredVersion": { "type": "string" },
+        "distribution": { "const": "user-supplied executable; not distributed by this repository" },
+        "sourceRepository": { "const": "https://github.com/aloistr/swisseph" },
+        "sourceTag": { "const": "v2.10.03" },
+        "sourceCommit": { "const": "175e1fcb3108bcd5c0d146c803f51dcf23508012" },
+        "buildTarget": { "const": "swetest" },
+        "buildCommand": { "const": "make swetest" },
+        "executableSha256": { "const": "8cb956985f8619174377a8aaa17245e5035838f867a1ec3ac284adf4821a8cf0" },
+        "environment": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["LC_ALL", "TZ"],
+          "properties": {
+            "LC_ALL": { "const": "C" },
+            "TZ": { "const": "UTC" }
+          }
+        },
+        "versionInvocation": { "type": "array", "items": { "type": "string" } },
+        "versionOutput": { "$ref": "#/$defs/rawArtifact" },
+        "requests": { "type": "array", "items": { "$ref": "#/$defs/swissRequest" } }
+      }
+    },
+    "tzdb": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["nodaTimePackageVersion", "providerVersion", "source", "caseSemantics"],
+      "properties": {
+        "nodaTimePackageVersion": { "const": "3.3.3" },
+        "providerVersion": { "type": "string" },
+        "source": { "const": "IANA TZDB distributed by Noda Time" },
+        "caseSemantics": { "const": "compatibility; not an independent timezone-engine comparison" }
+      }
+    }
+  },
+  "$defs": {
+    "rawArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "type": "string" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "jplRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "body", "purpose", "parameters", "expectedTargetHeader", "expectedRowTimes", "response", "responseHeaders"],
+      "properties": {
+        "id": { "type": "string" },
+        "body": { "type": "string" },
+        "purpose": { "type": "string" },
+        "parameters": { "type": "object" },
+        "expectedTargetHeader": { "type": "string" },
+        "expectedRowTimes": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "response": { "$ref": "#/$defs/rawArtifact" },
+        "responseHeaders": { "$ref": "#/$defs/rawArtifact" }
+      }
+    },
+    "swissRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["caseId", "utJulianDate", "eastPositiveLongitude", "latitude", "houseSystemCode", "arguments", "standardOutput"],
+      "properties": {
+        "caseId": { "type": "string" },
+        "utJulianDate": { "type": "number" },
+        "eastPositiveLongitude": { "type": "number" },
+        "latitude": { "type": "number" },
+        "houseSystemCode": { "enum": ["P", "O"] },
+        "arguments": { "type": "array", "items": { "type": "string" } },
+        "standardOutput": { "$ref": "#/$defs/rawArtifact" }
+      }
+    }
+  }
+}

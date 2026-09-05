@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>PathFinder.AccuracyBenchmark</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NodaTime" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(UsePackedKernel)' != 'true'">
+    <ProjectReference Include="../../src/PathFinder.CalculationKernel/PathFinder.CalculationKernel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(UsePackedKernel)' == 'true'">
+    <PackageReference Include="PathFinder.CalculationKernel" VersionOverride="[$(Version)]" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 2,
+  "datasetRevision": "calculation-benchmark-4",
+  "positions": {
+    "bodies": [
+      {
+        "body": "Sun",
+        "horizonsCommand": "10",
+        "horizonsTargetId": "10",
+        "horizonsTargetHeader": "Target body name: Sun (10) {source: DE441}",
+        "toleranceArcsec": 60
+      },
+      {
+        "body": "Moon",
+        "horizonsCommand": "301",
+        "horizonsTargetId": "301",
+        "horizonsTargetHeader": "Target body name: Moon (301) {source: DE441}",
+        "toleranceArcsec": 60
+      },
+      {
+        "body": "Mercury",
+        "horizonsCommand": "199",
+        "horizonsTargetId": "199",
+        "horizonsTargetHeader": "Target body name: Mercury (199) {source: DE441}",
+        "toleranceArcsec": 60
+      },
+      {
+        "body": "Venus",
+        "horizonsCommand": "299",
+        "horizonsTargetId": "299",
+        "horizonsTargetHeader": "Target body name: Venus (299) {source: DE441}",
+        "toleranceArcsec": 60
+      },
+      {
+        "body": "Mars",
+        "horizonsCommand": "499",
+        "horizonsTargetId": "499",
+        "horizonsTargetHeader": "Target body name: Mars (499) {source: mar099}",
+        "toleranceArcsec": 60
+      },
+      {
+        "body": "Jupiter",
+        "horizonsCommand": "599",
+        "horizonsTargetId": "599",
+        "horizonsTargetHeader": "Target body name: Jupiter (599) {source: jup365_merged}",
+        "toleranceArcsec": 60
+      },
+      {
+        "body": "Saturn",
+        "horizonsCommand": "699",
+        "horizonsTargetId": "699",
+        "horizonsTargetHeader": "Target body name: Saturn (699) {source: sat441l}",
+        "toleranceArcsec": 60
+      },
+      {
+        "body": "Uranus",
+        "horizonsCommand": "799",
+        "horizonsTargetId": "799",
+        "horizonsTargetHeader": "Target body name: Uranus (799) {source: ura184_merged}",
+        "toleranceArcsec": 60
+      },
+      {
+        "body": "Neptune",
+        "horizonsCommand": "899",
+        "horizonsTargetId": "899",
+        "horizonsTargetHeader": "Target body name: Neptune (899) {source: nep098_merged}",
+        "toleranceArcsec": 60
+      },
+      {
+        "body": "Pluto",
+        "horizonsCommand": "999",
+        "horizonsTargetId": "999",
+        "horizonsTargetHeader": "Target body name: Pluto (999) {source: plu060_merged}",
+        "toleranceArcsec": 60
+      },
+      {
+        "body": "Chiron",
+        "horizonsCommand": "2060;",
+        "horizonsTargetId": "2060",
+        "horizonsTargetHeader": "Target body name: 2060 Chiron (1977 UB) {source: JPL#171}",
+        "toleranceArcsec": 1800
+      }
+    ],
+    "epochs": [
+      {
+        "id": "1950-01-01t00-00-00z",
+        "utc": "1950-01-01T00:00:00Z",
+        "horizonsUt": "1950-Jan-01 00:00:00.000"
+      },
+      {
+        "id": "2000-01-01t12-00-00z",
+        "utc": "2000-01-01T12:00:00Z",
+        "horizonsUt": "2000-Jan-01 12:00:00.000"
+      },
+      {
+        "id": "2024-01-01t12-00-00z",
+        "utc": "2024-01-01T12:00:00Z",
+        "horizonsUt": "2024-Jan-01 12:00:00.000"
+      },
+      {
+        "id": "2050-01-01t00-00-00z",
+        "utc": "2050-01-01T00:00:00Z",
+        "horizonsUt": "2050-Jan-01 00:00:00.000"
+      }
+    ]
+  },
+  "houses": [
+    {
+      "id": "london-j2000",
+      "utc": "2000-01-01T00:00:00Z",
+      "latitude": 51.5074,
+      "eastPositiveLongitude": -0.1278,
+      "requestedSystem": "Placidus",
+      "referenceSystem": "Placidus",
+      "swissHouseSystemCode": "P",
+      "toleranceArcsec": 3600
+    },
+    {
+      "id": "new-york-eclipse",
+      "utc": "2024-04-08T18:00:00Z",
+      "latitude": 40.7128,
+      "eastPositiveLongitude": -74.006,
+      "requestedSystem": "Placidus",
+      "referenceSystem": "Placidus",
+      "swissHouseSystemCode": "P",
+      "toleranceArcsec": 3600
+    },
+    {
+      "id": "sydney-historical",
+      "utc": "1950-01-01T00:00:00Z",
+      "latitude": -33.8688,
+      "eastPositiveLongitude": 151.2093,
+      "requestedSystem": "Placidus",
+      "referenceSystem": "Placidus",
+      "swissHouseSystemCode": "P",
+      "toleranceArcsec": 3600
+    },
+    {
+      "id": "tromso-polar",
+      "utc": "2024-06-21T12:00:00Z",
+      "latitude": 69.6492,
+      "eastPositiveLongitude": 18.9553,
+      "requestedSystem": "Placidus",
+      "referenceSystem": "Porphyry",
+      "swissHouseSystemCode": "O",
+      "toleranceArcsec": 3600
+    }
+  ],
+  "timings": [
+    {
+      "id": "mercury-20-aries-direct-before-retrograde",
+      "kind": "longitude-crossing",
+      "body": "Mercury",
+      "motion": "direct",
+      "targetLongitudeDeg": 20,
+      "extremum": null,
+      "searchStartUtc": "2024-03-15T00:00:00Z",
+      "searchWindowDays": 15,
+      "method": "kernel-longitude-crossing",
+      "toleranceMinutes": 90
+    },
+    {
+      "id": "mercury-20-aries-retrograde",
+      "kind": "longitude-crossing",
+      "body": "Mercury",
+      "motion": "retrograde",
+      "targetLongitudeDeg": 20,
+      "extremum": null,
+      "searchStartUtc": "2024-04-01T00:00:00Z",
+      "searchWindowDays": 20,
+      "method": "kernel-longitude-crossing",
+      "toleranceMinutes": 90
+    },
+    {
+      "id": "mercury-20-aries-direct-after-retrograde",
+      "kind": "longitude-crossing",
+      "body": "Mercury",
+      "motion": "direct",
+      "targetLongitudeDeg": 20,
+      "extremum": null,
+      "searchStartUtc": "2024-04-20T00:00:00Z",
+      "searchWindowDays": 25,
+      "method": "kernel-longitude-crossing",
+      "toleranceMinutes": 90
+    },
+    {
+      "id": "mercury-april-direct-station",
+      "kind": "station",
+      "body": "Mercury",
+      "motion": "direct",
+      "targetLongitudeDeg": null,
+      "extremum": "minimum",
+      "searchStartUtc": "2024-04-22T00:00:00Z",
+      "searchWindowDays": 6,
+      "method": "kernel-station-parabolic-10-minute",
+      "toleranceMinutes": 360
+    },
+    {
+      "id": "saturn-june-retrograde-station",
+      "kind": "station",
+      "body": "Saturn",
+      "motion": "retrograde",
+      "targetLongitudeDeg": null,
+      "extremum": "maximum",
+      "searchStartUtc": "2024-06-26T00:00:00Z",
+      "searchWindowDays": 7,
+      "method": "kernel-station-parabolic-10-minute",
+      "toleranceMinutes": 360
+    },
+    {
+      "id": "pluto-may-retrograde-station",
+      "kind": "station",
+      "body": "Pluto",
+      "motion": "retrograde",
+      "targetLongitudeDeg": null,
+      "extremum": "maximum",
+      "searchStartUtc": "2024-04-29T00:00:00Z",
+      "searchWindowDays": 6,
+      "method": "kernel-station-parabolic-10-minute",
+      "toleranceMinutes": 360
+    }
+  ],
+  "historicalTimes": [
+    {
+      "id": "samoa-date-line-skip",
+      "requestedLocal": "2011-12-30T12:00:00",
+      "zoneId": "Pacific/Apia",
+      "resolutionMethod": "nodatime-in-zone-leniently",
+      "compatibilityCase": true
+    },
+    {
+      "id": "british-double-summer-time",
+      "requestedLocal": "1941-07-01T12:00:00",
+      "zoneId": "Europe/London",
+      "resolutionMethod": "nodatime-in-zone-leniently",
+      "compatibilityCase": true
+    },
+    {
+      "id": "amsterdam-local-mean-time",
+      "requestedLocal": "1850-01-01T12:00:00",
+      "zoneId": "Europe/Amsterdam",
+      "resolutionMethod": "nodatime-in-zone-leniently",
+      "compatibilityCase": true
+    }
+  ]
+}

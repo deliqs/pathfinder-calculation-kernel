@@ -1,0 +1,827 @@
+{
+  "schemaVersion": 2,
+  "datasetRevision": "calculation-benchmark-4",
+  "positions": [
+    {
+      "caseId": "sun-1950-01-01t00-00-00z",
+      "body": "Sun",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "1950-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 280.0048301,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "1950-Jan-01 00:00:29.053",
+      "matchedLongitudeDeg": 280.0048315,
+      "targetHeader": "Target body name: Sun (10)                        {source: DE441}"
+    },
+    {
+      "caseId": "sun-2000-01-01t12-00-00z",
+      "body": "Sun",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2000-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 280.3689092,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2000-Jan-01 12:01:03.847",
+      "matchedLongitudeDeg": 280.3689052,
+      "targetHeader": "Target body name: Sun (10)                        {source: DE441}"
+    },
+    {
+      "caseId": "sun-2024-01-01t12-00-00z",
+      "body": "Sun",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2024-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 280.548482,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2024-Jan-01 12:01:13.849",
+      "matchedLongitudeDeg": 280.548537,
+      "targetHeader": "Target body name: Sun (10)                        {source: DE441}"
+    },
+    {
+      "caseId": "sun-2050-01-01t00-00-00z",
+      "body": "Sun",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2050-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 280.7483818,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2050-Jan-01 00:01:32.968",
+      "matchedLongitudeDeg": 280.7486623,
+      "targetHeader": "Target body name: Sun (10)                        {source: DE441}"
+    },
+    {
+      "caseId": "moon-1950-01-01t00-00-00z",
+      "body": "Moon",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "1950-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 61.4154091,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "1950-Jan-01 00:00:29.053",
+      "matchedLongitudeDeg": 61.4154261,
+      "targetHeader": "Target body name: Moon (301)                      {source: DE441}"
+    },
+    {
+      "caseId": "moon-2000-01-01t12-00-00z",
+      "body": "Moon",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2000-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 223.323786,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2000-Jan-01 12:01:03.847",
+      "matchedLongitudeDeg": 223.3237392,
+      "targetHeader": "Target body name: Moon (301)                      {source: DE441}"
+    },
+    {
+      "caseId": "moon-2024-01-01t12-00-00z",
+      "body": "Moon",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2024-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 161.9070323,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2024-Jan-01 12:01:13.849",
+      "matchedLongitudeDeg": 161.9076702,
+      "targetHeader": "Target body name: Moon (301)                      {source: DE441}"
+    },
+    {
+      "caseId": "moon-2050-01-01t00-00-00z",
+      "body": "Moon",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2050-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 18.6755965,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2050-Jan-01 00:01:32.968",
+      "matchedLongitudeDeg": 18.6793111,
+      "targetHeader": "Target body name: Moon (301)                      {source: DE441}"
+    },
+    {
+      "caseId": "mercury-1950-01-01t00-00-00z",
+      "body": "Mercury",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "1950-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 299.4472523,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "1950-Jan-01 00:00:29.053",
+      "matchedLongitudeDeg": 299.4472538,
+      "targetHeader": "Target body name: Mercury (199)                   {source: DE441}"
+    },
+    {
+      "caseId": "mercury-2000-01-01t12-00-00z",
+      "body": "Mercury",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2000-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 271.8892699,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2000-Jan-01 12:01:03.847",
+      "matchedLongitudeDeg": 271.8892638,
+      "targetHeader": "Target body name: Mercury (199)                   {source: DE441}"
+    },
+    {
+      "caseId": "mercury-2024-01-01t12-00-00z",
+      "body": "Mercury",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2024-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 262.2120128,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2024-Jan-01 12:01:13.849",
+      "matchedLongitudeDeg": 262.2120074,
+      "targetHeader": "Target body name: Mercury (199)                   {source: DE441}"
+    },
+    {
+      "caseId": "mercury-2050-01-01t00-00-00z",
+      "body": "Mercury",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2050-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 270.059488,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2050-Jan-01 00:01:32.968",
+      "matchedLongitudeDeg": 270.0592245,
+      "targetHeader": "Target body name: Mercury (199)                   {source: DE441}"
+    },
+    {
+      "caseId": "venus-1950-01-01t00-00-00z",
+      "body": "Venus",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "1950-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 316.9794775,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "1950-Jan-01 00:00:29.053",
+      "matchedLongitudeDeg": 316.9794779,
+      "targetHeader": "Target body name: Venus (299)                     {source: DE441}"
+    },
+    {
+      "caseId": "venus-2000-01-01t12-00-00z",
+      "body": "Venus",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2000-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 241.5657794,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2000-Jan-01 12:01:03.847",
+      "matchedLongitudeDeg": 241.5657746,
+      "targetHeader": "Target body name: Venus (299)                     {source: DE441}"
+    },
+    {
+      "caseId": "venus-2024-01-01t12-00-00z",
+      "body": "Venus",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2024-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 243.2204202,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2024-Jan-01 12:01:13.849",
+      "matchedLongitudeDeg": 243.2204859,
+      "targetHeader": "Target body name: Venus (299)                     {source: DE441}"
+    },
+    {
+      "caseId": "venus-2050-01-01t00-00-00z",
+      "body": "Venus",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2050-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 281.2480375,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2050-Jan-01 00:01:32.968",
+      "matchedLongitudeDeg": 281.2483839,
+      "targetHeader": "Target body name: Venus (299)                     {source: DE441}"
+    },
+    {
+      "caseId": "mars-1950-01-01t00-00-00z",
+      "body": "Mars",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "1950-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 182.2111967,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "1950-Jan-01 00:00:29.053",
+      "matchedLongitudeDeg": 182.2111973,
+      "targetHeader": "Target body name: Mars (499)                      {source: mar099}"
+    },
+    {
+      "caseId": "mars-2000-01-01t12-00-00z",
+      "body": "Mars",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2000-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 327.9632921,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2000-Jan-01 12:01:03.847",
+      "matchedLongitudeDeg": 327.9632891,
+      "targetHeader": "Target body name: Mars (499)                      {source: mar099}"
+    },
+    {
+      "caseId": "mars-2024-01-01t12-00-00z",
+      "body": "Mars",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2024-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 267.6791456,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2024-Jan-01 12:01:13.849",
+      "matchedLongitudeDeg": 267.6791856,
+      "targetHeader": "Target body name: Mars (499)                      {source: mar099}"
+    },
+    {
+      "caseId": "mars-2050-01-01t00-00-00z",
+      "body": "Mars",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2050-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 227.7146932,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2050-Jan-01 00:01:32.968",
+      "matchedLongitudeDeg": 227.7148681,
+      "targetHeader": "Target body name: Mars (499)                      {source: mar099}"
+    },
+    {
+      "caseId": "jupiter-1950-01-01t00-00-00z",
+      "body": "Jupiter",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "1950-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 306.5053249,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "1950-Jan-01 00:00:29.053",
+      "matchedLongitudeDeg": 306.5053252,
+      "targetHeader": "Target body name: Jupiter (599)                   {source: jup365_merged}"
+    },
+    {
+      "caseId": "jupiter-2000-01-01t12-00-00z",
+      "body": "Jupiter",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2000-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 25.2530685,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2000-Jan-01 12:01:03.847",
+      "matchedLongitudeDeg": 25.2530683,
+      "targetHeader": "Target body name: Jupiter (599)                   {source: jup365_merged}"
+    },
+    {
+      "caseId": "jupiter-2024-01-01t12-00-00z",
+      "body": "Jupiter",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2024-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 35.5843503,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2024-Jan-01 12:01:13.849",
+      "matchedLongitudeDeg": 35.5843505,
+      "targetHeader": "Target body name: Jupiter (599)                   {source: jup365_merged}"
+    },
+    {
+      "caseId": "jupiter-2050-01-01t00-00-00z",
+      "body": "Jupiter",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2050-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 121.6915478,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2050-Jan-01 00:01:32.968",
+      "matchedLongitudeDeg": 121.6915152,
+      "targetHeader": "Target body name: Jupiter (599)                   {source: jup365_merged}"
+    },
+    {
+      "caseId": "saturn-1950-01-01t00-00-00z",
+      "body": "Saturn",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "1950-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 169.4374218,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "1950-Jan-01 00:00:29.053",
+      "matchedLongitudeDeg": 169.4374218,
+      "targetHeader": "Target body name: Saturn (699)                    {source: sat441l}"
+    },
+    {
+      "caseId": "saturn-2000-01-01t12-00-00z",
+      "body": "Saturn",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2000-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 40.3956366,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2000-Jan-01 12:01:03.847",
+      "matchedLongitudeDeg": 40.3956367,
+      "targetHeader": "Target body name: Saturn (699)                    {source: sat441l}"
+    },
+    {
+      "caseId": "saturn-2024-01-01t12-00-00z",
+      "body": "Saturn",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2024-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 333.2879074,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2024-Jan-01 12:01:13.849",
+      "matchedLongitudeDeg": 333.2879122,
+      "targetHeader": "Target body name: Saturn (699)                    {source: sat441l}"
+    },
+    {
+      "caseId": "saturn-2050-01-01t00-00-00z",
+      "body": "Saturn",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2050-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 297.5742797,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2050-Jan-01 00:01:32.968",
+      "matchedLongitudeDeg": 297.5743115,
+      "targetHeader": "Target body name: Saturn (699)                    {source: sat441l}"
+    },
+    {
+      "caseId": "uranus-1950-01-01t00-00-00z",
+      "body": "Uranus",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "1950-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 92.6827205,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "1950-Jan-01 00:00:29.053",
+      "matchedLongitudeDeg": 92.6827205,
+      "targetHeader": "Target body name: Uranus (799)                    {source: ura184_merged}"
+    },
+    {
+      "caseId": "uranus-2000-01-01t12-00-00z",
+      "body": "Uranus",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2000-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 314.809168,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2000-Jan-01 12:01:03.847",
+      "matchedLongitudeDeg": 314.8091678,
+      "targetHeader": "Target body name: Uranus (799)                    {source: ura184_merged}"
+    },
+    {
+      "caseId": "uranus-2024-01-01t12-00-00z",
+      "body": "Uranus",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2024-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 49.3730554,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2024-Jan-01 12:01:13.849",
+      "matchedLongitudeDeg": 49.3730542,
+      "targetHeader": "Target body name: Uranus (799)                    {source: ura184_merged}"
+    },
+    {
+      "caseId": "uranus-2050-01-01t00-00-00z",
+      "body": "Uranus",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2050-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 170.7326098,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2050-Jan-01 00:01:32.968",
+      "matchedLongitudeDeg": 170.7326081,
+      "targetHeader": "Target body name: Uranus (799)                    {source: ura184_merged}"
+    },
+    {
+      "caseId": "neptune-1950-01-01t00-00-00z",
+      "body": "Neptune",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "1950-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 197.2660392,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "1950-Jan-01 00:00:29.053",
+      "matchedLongitudeDeg": 197.2660392,
+      "targetHeader": "Target body name: Neptune (899)                   {source: nep098_merged}"
+    },
+    {
+      "caseId": "neptune-2000-01-01t12-00-00z",
+      "body": "Neptune",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2000-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 303.1930007,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2000-Jan-01 12:01:03.847",
+      "matchedLongitudeDeg": 303.1930005,
+      "targetHeader": "Target body name: Neptune (899)                   {source: nep098_merged}"
+    },
+    {
+      "caseId": "neptune-2024-01-01t12-00-00z",
+      "body": "Neptune",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2024-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 355.0834959,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2024-Jan-01 12:01:13.849",
+      "matchedLongitudeDeg": 355.0834967,
+      "targetHeader": "Target body name: Neptune (899)                   {source: nep098_merged}"
+    },
+    {
+      "caseId": "neptune-2050-01-01t00-00-00z",
+      "body": "Neptune",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2050-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 53.6034207,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2050-Jan-01 00:01:32.968",
+      "matchedLongitudeDeg": 53.603416,
+      "targetHeader": "Target body name: Neptune (899)                   {source: nep098_merged}"
+    },
+    {
+      "caseId": "pluto-1950-01-01t00-00-00z",
+      "body": "Pluto",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "1950-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 137.7983813,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "1950-Jan-01 00:00:29.053",
+      "matchedLongitudeDeg": 137.7983813,
+      "targetHeader": "Target body name: Pluto (999)                     {source: plu060_merged}"
+    },
+    {
+      "caseId": "pluto-2000-01-01t12-00-00z",
+      "body": "Pluto",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2000-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 251.4547644,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2000-Jan-01 12:01:03.847",
+      "matchedLongitudeDeg": 251.4547642,
+      "targetHeader": "Target body name: Pluto (999)                     {source: plu060_merged}"
+    },
+    {
+      "caseId": "pluto-2024-01-01t12-00-00z",
+      "body": "Pluto",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2024-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 299.3731764,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2024-Jan-01 12:01:13.849",
+      "matchedLongitudeDeg": 299.373178,
+      "targetHeader": "Target body name: Pluto (999)                     {source: plu060_merged}"
+    },
+    {
+      "caseId": "pluto-2050-01-01t00-00-00z",
+      "body": "Pluto",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2050-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 337.5330672,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2050-Jan-01 00:01:32.968",
+      "matchedLongitudeDeg": 337.5330718,
+      "targetHeader": "Target body name: Pluto (999)                     {source: plu060_merged}"
+    },
+    {
+      "caseId": "chiron-1950-01-01t00-00-00z",
+      "body": "Chiron",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "1950-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 255.7772883,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "1950-Jan-01 00:00:29.053",
+      "matchedLongitudeDeg": 255.7772885,
+      "targetHeader": "Target body name: 2060 Chiron (1977 UB)           {source: JPL#171}"
+    },
+    {
+      "caseId": "chiron-2000-01-01t12-00-00z",
+      "body": "Chiron",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2000-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 251.617609,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2000-Jan-01 12:01:03.847",
+      "matchedLongitudeDeg": 251.6176085,
+      "targetHeader": "Target body name: 2060 Chiron (1977 UB)           {source: JPL#171}"
+    },
+    {
+      "caseId": "chiron-2024-01-01t12-00-00z",
+      "body": "Chiron",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2024-Jan-01 12:00:00.000",
+      "nominalLongitudeDeg": 15.4649112,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2024-Jan-01 12:01:13.849",
+      "matchedLongitudeDeg": 15.4649114,
+      "targetHeader": "Target body name: 2060 Chiron (1977 UB)           {source: JPL#171}"
+    },
+    {
+      "caseId": "chiron-2050-01-01t00-00-00z",
+      "body": "Chiron",
+      "nominalTimeType": "UT",
+      "nominalTimeValue": "2050-Jan-01 00:00:00.000",
+      "nominalLongitudeDeg": 246.5876012,
+      "matchedTimeType": "TT",
+      "matchedTimeValue": "2050-Jan-01 00:01:32.968",
+      "matchedLongitudeDeg": 246.5876326,
+      "targetHeader": "Target body name: 2060 Chiron (1977 UB)           {source: JPL#171}"
+    }
+  ],
+  "houseCusps": [
+    {
+      "caseId": "london-j2000",
+      "referenceSystem": "Placidus",
+      "cusp": 1,
+      "longitudeDeg": 186.9366677
+    },
+    {
+      "caseId": "london-j2000",
+      "referenceSystem": "Placidus",
+      "cusp": 2,
+      "longitudeDeg": 211.6249465
+    },
+    {
+      "caseId": "london-j2000",
+      "referenceSystem": "Placidus",
+      "cusp": 3,
+      "longitudeDeg": 242.4752847
+    },
+    {
+      "caseId": "london-j2000",
+      "referenceSystem": "Placidus",
+      "cusp": 4,
+      "longitudeDeg": 279.0388591
+    },
+    {
+      "caseId": "london-j2000",
+      "referenceSystem": "Placidus",
+      "cusp": 5,
+      "longitudeDeg": 314.6328741
+    },
+    {
+      "caseId": "london-j2000",
+      "referenceSystem": "Placidus",
+      "cusp": 6,
+      "longitudeDeg": 343.9136978
+    },
+    {
+      "caseId": "london-j2000",
+      "referenceSystem": "Placidus",
+      "cusp": 7,
+      "longitudeDeg": 6.9366677
+    },
+    {
+      "caseId": "london-j2000",
+      "referenceSystem": "Placidus",
+      "cusp": 8,
+      "longitudeDeg": 31.6249465
+    },
+    {
+      "caseId": "london-j2000",
+      "referenceSystem": "Placidus",
+      "cusp": 9,
+      "longitudeDeg": 62.4752847
+    },
+    {
+      "caseId": "london-j2000",
+      "referenceSystem": "Placidus",
+      "cusp": 10,
+      "longitudeDeg": 99.0388591
+    },
+    {
+      "caseId": "london-j2000",
+      "referenceSystem": "Placidus",
+      "cusp": 11,
+      "longitudeDeg": 134.6328741
+    },
+    {
+      "caseId": "london-j2000",
+      "referenceSystem": "Placidus",
+      "cusp": 12,
+      "longitudeDeg": 163.9136978
+    },
+    {
+      "caseId": "new-york-eclipse",
+      "referenceSystem": "Placidus",
+      "cusp": 1,
+      "longitudeDeg": 135.4866406
+    },
+    {
+      "caseId": "new-york-eclipse",
+      "referenceSystem": "Placidus",
+      "cusp": 2,
+      "longitudeDeg": 156.9514923
+    },
+    {
+      "caseId": "new-york-eclipse",
+      "referenceSystem": "Placidus",
+      "cusp": 3,
+      "longitudeDeg": 183.3709962
+    },
+    {
+      "caseId": "new-york-eclipse",
+      "referenceSystem": "Placidus",
+      "cusp": 4,
+      "longitudeDeg": 215.7843883
+    },
+    {
+      "caseId": "new-york-eclipse",
+      "referenceSystem": "Placidus",
+      "cusp": 5,
+      "longitudeDeg": 251.8458125
+    },
+    {
+      "caseId": "new-york-eclipse",
+      "referenceSystem": "Placidus",
+      "cusp": 6,
+      "longitudeDeg": 286.0248864
+    },
+    {
+      "caseId": "new-york-eclipse",
+      "referenceSystem": "Placidus",
+      "cusp": 7,
+      "longitudeDeg": 315.4866406
+    },
+    {
+      "caseId": "new-york-eclipse",
+      "referenceSystem": "Placidus",
+      "cusp": 8,
+      "longitudeDeg": 336.9514923
+    },
+    {
+      "caseId": "new-york-eclipse",
+      "referenceSystem": "Placidus",
+      "cusp": 9,
+      "longitudeDeg": 3.3709962
+    },
+    {
+      "caseId": "new-york-eclipse",
+      "referenceSystem": "Placidus",
+      "cusp": 10,
+      "longitudeDeg": 35.7843883
+    },
+    {
+      "caseId": "new-york-eclipse",
+      "referenceSystem": "Placidus",
+      "cusp": 11,
+      "longitudeDeg": 71.8458125
+    },
+    {
+      "caseId": "new-york-eclipse",
+      "referenceSystem": "Placidus",
+      "cusp": 12,
+      "longitudeDeg": 106.0248864
+    },
+    {
+      "caseId": "sydney-historical",
+      "referenceSystem": "Placidus",
+      "cusp": 1,
+      "longitudeDeg": 344.2269452
+    },
+    {
+      "caseId": "sydney-historical",
+      "referenceSystem": "Placidus",
+      "cusp": 2,
+      "longitudeDeg": 10.2902626
+    },
+    {
+      "caseId": "sydney-historical",
+      "referenceSystem": "Placidus",
+      "cusp": 3,
+      "longitudeDeg": 40.2694354
+    },
+    {
+      "caseId": "sydney-historical",
+      "referenceSystem": "Placidus",
+      "cusp": 4,
+      "longitudeDeg": 72.7341259
+    },
+    {
+      "caseId": "sydney-historical",
+      "referenceSystem": "Placidus",
+      "cusp": 5,
+      "longitudeDeg": 105.3719551
+    },
+    {
+      "caseId": "sydney-historical",
+      "referenceSystem": "Placidus",
+      "cusp": 6,
+      "longitudeDeg": 136.2137914
+    },
+    {
+      "caseId": "sydney-historical",
+      "referenceSystem": "Placidus",
+      "cusp": 7,
+      "longitudeDeg": 164.2269452
+    },
+    {
+      "caseId": "sydney-historical",
+      "referenceSystem": "Placidus",
+      "cusp": 8,
+      "longitudeDeg": 190.2902626
+    },
+    {
+      "caseId": "sydney-historical",
+      "referenceSystem": "Placidus",
+      "cusp": 9,
+      "longitudeDeg": 220.2694354
+    },
+    {
+      "caseId": "sydney-historical",
+      "referenceSystem": "Placidus",
+      "cusp": 10,
+      "longitudeDeg": 252.7341259
+    },
+    {
+      "caseId": "sydney-historical",
+      "referenceSystem": "Placidus",
+      "cusp": 11,
+      "longitudeDeg": 285.3719551
+    },
+    {
+      "caseId": "sydney-historical",
+      "referenceSystem": "Placidus",
+      "cusp": 12,
+      "longitudeDeg": 316.2137914
+    },
+    {
+      "caseId": "tromso-polar",
+      "referenceSystem": "Porphyry",
+      "cusp": 1,
+      "longitudeDeg": 189.5926397
+    },
+    {
+      "caseId": "tromso-polar",
+      "referenceSystem": "Porphyry",
+      "cusp": 2,
+      "longitudeDeg": 222.27997
+    },
+    {
+      "caseId": "tromso-polar",
+      "referenceSystem": "Porphyry",
+      "cusp": 3,
+      "longitudeDeg": 254.9673003
+    },
+    {
+      "caseId": "tromso-polar",
+      "referenceSystem": "Porphyry",
+      "cusp": 4,
+      "longitudeDeg": 287.6546307
+    },
+    {
+      "caseId": "tromso-polar",
+      "referenceSystem": "Porphyry",
+      "cusp": 5,
+      "longitudeDeg": 314.9673003
+    },
+    {
+      "caseId": "tromso-polar",
+      "referenceSystem": "Porphyry",
+      "cusp": 6,
+      "longitudeDeg": 342.27997
+    },
+    {
+      "caseId": "tromso-polar",
+      "referenceSystem": "Porphyry",
+      "cusp": 7,
+      "longitudeDeg": 9.5926397
+    },
+    {
+      "caseId": "tromso-polar",
+      "referenceSystem": "Porphyry",
+      "cusp": 8,
+      "longitudeDeg": 42.27997
+    },
+    {
+      "caseId": "tromso-polar",
+      "referenceSystem": "Porphyry",
+      "cusp": 9,
+      "longitudeDeg": 74.9673003
+    },
+    {
+      "caseId": "tromso-polar",
+      "referenceSystem": "Porphyry",
+      "cusp": 10,
+      "longitudeDeg": 107.6546307
+    },
+    {
+      "caseId": "tromso-polar",
+      "referenceSystem": "Porphyry",
+      "cusp": 11,
+      "longitudeDeg": 134.9673003
+    },
+    {
+      "caseId": "tromso-polar",
+      "referenceSystem": "Porphyry",
+      "cusp": 12,
+      "longitudeDeg": 162.27997
+    }
+  ],
+  "timings": [
+    {
+      "caseId": "mercury-20-aries-direct-before-retrograde",
+      "referenceMethod": "jpl-quantity31-hourly-linear-crossing",
+      "referenceUtc": "2024-03-21T23:56:28.9467869Z"
+    },
+    {
+      "caseId": "mercury-20-aries-retrograde",
+      "referenceMethod": "jpl-quantity31-hourly-linear-crossing",
+      "referenceUtc": "2024-04-15T08:58:34.8833348Z"
+    },
+    {
+      "caseId": "mercury-20-aries-direct-after-retrograde",
+      "referenceMethod": "jpl-quantity31-hourly-linear-crossing",
+      "referenceUtc": "2024-05-05T18:38:25.7725797Z"
+    },
+    {
+      "caseId": "mercury-april-direct-station",
+      "referenceMethod": "jpl-quantity31-10-minute-parabolic-extremum",
+      "referenceUtc": "2024-04-25T12:54:01.4634147Z"
+    },
+    {
+      "caseId": "saturn-june-retrograde-station",
+      "referenceMethod": "jpl-quantity31-10-minute-parabolic-extremum",
+      "referenceUtc": "2024-06-29T19:10:00Z"
+    },
+    {
+      "caseId": "pluto-may-retrograde-station",
+      "referenceMethod": "jpl-quantity31-10-minute-parabolic-extremum",
+      "referenceUtc": "2024-05-02T17:15:00Z"
+    }
+  ],
+  "chironSeed": {
+    "referenceId": "jpl-horizons-chiron-seed-jpl171-j2000",
+    "targetHeader": "Target body name: 2060 Chiron (1977 UB) {source: JPL#171}",
+    "centerHeader": "Sun (10)",
+    "referenceFrame": "ICRF/J2000",
+    "units": "AU-D",
+    "timeScale": "TDB",
+    "julianDate": 2451545,
+    "x": -3.529597323721606,
+    "y": -8.675401114502414,
+    "z": -2.935904700117773,
+    "vx": 0.004971227226758336,
+    "vy": -0.003626418894486951,
+    "vz": -0.0008257960206970693
+  }
+}

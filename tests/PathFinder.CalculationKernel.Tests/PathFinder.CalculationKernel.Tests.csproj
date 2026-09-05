@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(UsePackedKernel)' != 'true'">
+    <ProjectReference Include="../../src/PathFinder.CalculationKernel/PathFinder.CalculationKernel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(UsePackedKernel)' == 'true'">
+    <PackageReference Include="PathFinder.CalculationKernel" VersionOverride="[$(Version)]" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="TestData\*.csv" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="TestData\*.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

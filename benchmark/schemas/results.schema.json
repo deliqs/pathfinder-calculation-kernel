@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/deliqs/pathfinder-calculation-kernel/benchmark/schemas/results.schema.json",
+  "title": "PathFinder calculation benchmark results",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "datasetRevision", "provenance", "summary", "positions", "houseCusps", "timings", "historicalTimes"],
+  "properties": {
+    "schemaVersion": { "const": 2 },
+    "datasetRevision": { "type": "string" },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "calculationPackage", "calculationRevision", "calculationSourceManifestSha256",
+        "referenceManifestSha256", "astronomyEngineVersion", "nodaTimeVersion", "tzdbVersion",
+        "jplApiSource", "jplApiVersion", "swissEphemerisVersion", "swissSourceCommit",
+        "swissExecutableSha256", "horizonsUtSemantics", "horizons1950InputSemantics",
+        "swissUtSemantics", "dut1AssumptionSeconds"
+      ],
+      "properties": {
+        "calculationPackage": { "const": "PathFinder.CalculationKernel" },
+        "calculationRevision": { "type": "string" },
+        "calculationSourceManifestSha256": { "$ref": "#/$defs/sha256" },
+        "referenceManifestSha256": { "$ref": "#/$defs/sha256" },
+        "astronomyEngineVersion": { "type": "string" },
+        "nodaTimeVersion": { "type": "string" },
+        "tzdbVersion": { "type": "string" },
+        "jplApiSource": { "type": "string" },
+        "jplApiVersion": { "type": "string" },
+        "swissEphemerisVersion": { "type": "string" },
+        "swissSourceCommit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "swissExecutableSha256": { "$ref": "#/$defs/sha256" },
+        "horizonsUtSemantics": { "type": "string" },
+        "horizons1950InputSemantics": { "type": "string" },
+        "swissUtSemantics": { "type": "string" },
+        "dut1AssumptionSeconds": { "const": 0 }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "positionRows", "positionPassed", "medianNominalUtcPositionErrorArcsec",
+        "maximumNominalUtcPositionErrorArcsec", "medianMatchedTtPositionErrorArcsec",
+        "maximumMatchedTtPositionErrorArcsec", "houseCuspRows", "houseCuspsPassed",
+        "maximumHouseCuspErrorArcsec", "timingRows", "timingsPassed",
+        "maximumTimingErrorMinutes", "historicalTimeRows", "historicalTimesExecuted"
+      ],
+      "properties": {
+        "positionRows": { "type": "integer", "minimum": 0 },
+        "positionPassed": { "type": "integer", "minimum": 0 },
+        "medianNominalUtcPositionErrorArcsec": { "type": "number", "minimum": 0, "multipleOf": 0.001 },
+        "maximumNominalUtcPositionErrorArcsec": { "type": "number", "minimum": 0, "multipleOf": 0.001 },
+        "medianMatchedTtPositionErrorArcsec": { "type": "number", "minimum": 0, "multipleOf": 0.001 },
+        "maximumMatchedTtPositionErrorArcsec": { "type": "number", "minimum": 0, "multipleOf": 0.001 },
+        "houseCuspRows": { "type": "integer", "minimum": 0 },
+        "houseCuspsPassed": { "type": "integer", "minimum": 0 },
+        "maximumHouseCuspErrorArcsec": { "type": "number", "minimum": 0, "multipleOf": 0.001 },
+        "timingRows": { "type": "integer", "minimum": 0 },
+        "timingsPassed": { "type": "integer", "minimum": 0 },
+        "maximumTimingErrorMinutes": { "type": "number", "minimum": 0, "multipleOf": 0.001 },
+        "historicalTimeRows": { "type": "integer", "minimum": 0 },
+        "historicalTimesExecuted": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "positions": { "type": "array", "items": { "$ref": "#/$defs/positionResult" } },
+    "houseCusps": { "type": "array", "items": { "$ref": "#/$defs/houseResult" } },
+    "timings": { "type": "array", "items": { "$ref": "#/$defs/timingResult" } },
+    "historicalTimes": { "type": "array", "items": { "$ref": "#/$defs/historicalResult" } }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "positionResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "caseId", "body", "utc", "pathfinderLongitudeDeg", "jplNominalUtcLongitudeDeg",
+        "jplMatchedTtLongitudeDeg", "nominalUtcErrorArcsec", "matchedTtErrorArcsec",
+        "pathfinderDeltaTSeconds", "horizonsNominalTimeType", "horizonsNominalTimeValue",
+        "horizonsMatchedTimeType", "horizonsMatchedTimeValue", "toleranceArcsec", "passed"
+      ],
+      "properties": {
+        "caseId": { "type": "string" },
+        "body": { "type": "string" },
+        "utc": { "type": "string", "format": "date-time" },
+        "pathfinderLongitudeDeg": { "type": "number", "multipleOf": 0.0000001 },
+        "jplNominalUtcLongitudeDeg": { "type": "number" },
+        "jplMatchedTtLongitudeDeg": { "type": "number" },
+        "nominalUtcErrorArcsec": { "type": "number", "minimum": 0, "multipleOf": 0.001 },
+        "matchedTtErrorArcsec": { "type": "number", "minimum": 0, "multipleOf": 0.001 },
+        "pathfinderDeltaTSeconds": { "type": "number", "multipleOf": 0.001 },
+        "horizonsNominalTimeType": { "const": "UT" },
+        "horizonsNominalTimeValue": { "type": "string" },
+        "horizonsMatchedTimeType": { "const": "TT" },
+        "horizonsMatchedTimeValue": { "type": "string" },
+        "toleranceArcsec": { "type": "number", "minimum": 0 },
+        "passed": { "type": "boolean" }
+      }
+    },
+    "houseResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "caseId", "utc", "latitude", "eastPositiveLongitude", "requestedSystem",
+        "referenceSystem", "cusp", "pathfinderLongitudeDeg", "swissLongitudeDeg",
+        "absoluteErrorArcsec", "toleranceArcsec", "passed"
+      ],
+      "properties": {
+        "caseId": { "type": "string" },
+        "utc": { "type": "string", "format": "date-time" },
+        "latitude": { "type": "number" },
+        "eastPositiveLongitude": { "type": "number" },
+        "requestedSystem": { "type": "string" },
+        "referenceSystem": { "type": "string" },
+        "cusp": { "type": "integer", "minimum": 1, "maximum": 12 },
+        "pathfinderLongitudeDeg": { "type": "number", "multipleOf": 0.0000001 },
+        "swissLongitudeDeg": { "type": "number" },
+        "absoluteErrorArcsec": { "type": "number", "minimum": 0, "multipleOf": 0.001 },
+        "toleranceArcsec": { "type": "number", "minimum": 0 },
+        "passed": { "type": "boolean" }
+      }
+    },
+    "timingResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "caseId", "kind", "body", "motion", "targetLongitudeDeg", "extremum",
+        "searchStartUtc", "searchWindowDays", "pathfinderMethod", "referenceMethod",
+        "referenceUtc", "pathfinderUtc", "absoluteErrorMinutes", "toleranceMinutes", "passed"
+      ],
+      "properties": {
+        "caseId": { "type": "string" },
+        "kind": { "type": "string" },
+        "body": { "type": "string" },
+        "motion": { "enum": ["direct", "retrograde"] },
+        "targetLongitudeDeg": { "type": ["number", "null"] },
+        "extremum": { "type": ["string", "null"] },
+        "searchStartUtc": { "type": "string", "format": "date-time" },
+        "searchWindowDays": { "type": "integer", "minimum": 1 },
+        "pathfinderMethod": { "type": "string" },
+        "referenceMethod": { "type": "string" },
+        "referenceUtc": { "type": "string", "format": "date-time" },
+        "pathfinderUtc": { "type": "string", "format": "date-time" },
+        "absoluteErrorMinutes": { "type": "number", "minimum": 0, "multipleOf": 0.001 },
+        "toleranceMinutes": { "type": "number", "minimum": 0 },
+        "passed": { "type": "boolean" }
+      }
+    },
+    "historicalResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "caseId", "requestedLocal", "zoneId", "resolutionMethod", "compatibilityCase",
+        "resolvedLocal", "utcInstant", "selectedOffset", "warningCodes", "tzdbVersion", "executed"
+      ],
+      "properties": {
+        "caseId": { "type": "string" },
+        "requestedLocal": { "type": "string" },
+        "zoneId": { "type": "string" },
+        "resolutionMethod": { "const": "nodatime-in-zone-leniently" },
+        "compatibilityCase": { "const": true },
+        "resolvedLocal": { "type": "string" },
+        "utcInstant": { "type": "string", "format": "date-time" },
+        "selectedOffset": { "type": "string" },
+        "warningCodes": { "type": "array", "items": { "type": "string" } },
+        "tzdbVersion": { "type": "string" },
+        "executed": { "type": "boolean" }
+      }
+    }
+  }
+}

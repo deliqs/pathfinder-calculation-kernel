@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this calculation kernel or benchmark, cite the immutable release you reproduced."
+type: software
+title: "PathFinder Calculation Kernel"
+version: 0.1.0
+authors:
+  - name: "PathFinder contributors"
+license: MIT
+repository-code: "https://github.com/deliqs/pathfinder-calculation-kernel"
+url: "https://github.com/deliqs/pathfinder-calculation-kernel"
+keywords:
+  - astronomy
+  - astrology
+  - ephemeris
+  - reproducibility

@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "calculationPackage": "PathFinder.CalculationKernel",
+  "calculationRevision": "4",
+  "files": [
+    {
+      "path": "src/PathFinder.CalculationKernel/CalculationContracts.cs",
+      "sha256": "a96cf0e1ff7e972875d9ba129635b4c150fad9249b0b31129a44a30efa4d411d"
+    },
+    {
+      "path": "src/PathFinder.CalculationKernel/Ephemeris/AstronomyEngineEphemeris.cs",
+      "sha256": "da8a23e857b3f974fb04685c8abc22749dd51db92b3946f3b9970ec9fabb747d"
+    },
+    {
+      "path": "src/PathFinder.CalculationKernel/Ephemeris/AstronomyEngineTime.cs",
+      "sha256": "76bdb375e0b10754cc64175edefd75f925b14e45ac8073f1495878166ac6cd15"
+    },
+    {
+      "path": "src/PathFinder.CalculationKernel/Ephemeris/CalculatedPointEphemeris.cs",
+      "sha256": "07fb9a831e687c1ad2687d596664d8a60b6fcff26d9315c6ce940cd6b98f2d65"
+    },
+    {
+      "path": "src/PathFinder.CalculationKernel/Ephemeris/ChironCalculator.cs",
+      "sha256": "3fb429db82fad24a3950884fd8f46c5910eda4f286bb60e45d983e42924900c0"
+    },
+    {
+      "path": "src/PathFinder.CalculationKernel/Ephemeris/IEphemeris.cs",
+      "sha256": "6b286b3f9aa4461a1798280190b4d286362422851a2c2cc24920ec3db13a19fb"
+    },
+    {
+      "path": "src/PathFinder.CalculationKernel/Ephemeris/LongitudeSearch.cs",
+      "sha256": "44b62c46b1a7e2e2472790fb5d9f1549b11b80cbe790a61578320a6cab02ea7f"
+    },
+    {
+      "path": "src/PathFinder.CalculationKernel/Houses/AstroMath.cs",
+      "sha256": "46983278df922cff762e7a356a49881bac238bcb2af4947085a4538114e49795"
+    },
+    {
+      "path": "src/PathFinder.CalculationKernel/Houses/CampanusHouses.cs",
+      "sha256": "6e4a23781af4cbbc9643f8845fb39727dfe761c6d3fb6ad35b2fb95e672d775e"
+    },
+    {
+      "path": "src/PathFinder.CalculationKernel/Houses/HouseCalculator.cs",
+      "sha256": "be187d43ac49ae0b2f2667ac41b045464717495621efe5ce25a04b2b0a55db32"
+    },
+    {
+      "path": "src/PathFinder.CalculationKernel/Houses/HouseCircleGeometry.cs",
+      "sha256": "cc9c4224b1b017790160c564f28f2d135fb3a5c91ea29ae6f553fc13309a9af9"
+    },
+    {
+      "path": "src/PathFinder.CalculationKernel/Houses/KochHouses.cs",
+      "sha256": "264ac2f59e89652b69dc643391c7b3ccc8edd4f3a2a8928159494832d35d4f77"
+    },
+    {
+      "path": "src/PathFinder.CalculationKernel/Houses/PlacidusHouses.cs",
+      "sha256": "fe5b6fe489e6432ff0e3e54a15ed9cab14dfbb78a9c05010ea971ca8c4185a81"
+    },
+    {
+      "path": "src/PathFinder.CalculationKernel/Houses/QuadrantCusps.cs",
+      "sha256": "6b9b1d14b91bf208427b951fea3943661dc3dff7b694e976ccf9aef6ba0bdc86"
+    },
+    {
+      "path": "src/PathFinder.CalculationKernel/Houses/RegiomontanusHouses.cs",
+      "sha256": "19abb078e77aec81bd2cf359975bd605539c1c93fc1b360612726345be2b1093"
+    },
+    {
+      "path": "src/PathFinder.CalculationKernel/Provenance/CalculationKernelMetadata.cs",
+      "sha256": "12db8ad9688fba51473b223e951871513ecd7152686b9647707a78e7f8f2d89a"
+    },
+    {
+      "path": "src/PathFinder.CalculationKernel/Search/LongitudeCrossingFinder.cs",
+      "sha256": "6d3f5c283c1da78b32b9537b558ebf85c6561e60a59866b2ea7515db9b4ef920"
+    },
+    {
+      "path": "src/PathFinder.CalculationKernel/Search/LongitudeCrossingSearch.cs",
+      "sha256": "d30d3e11e14dca294ec31d9e3b68950aa57593e9759c5f1895bd881b4255de70"
+    },
+    {
+      "path": "src/PathFinder.CalculationKernel/Search/StationFinder.cs",
+      "sha256": "6a76b4924061f9a6518d607de5c84865b1f7999b52ce373d6def62256a84edcd"
+    },
+    {
+      "path": "src/PathFinder.CalculationKernel/Time/ChartTimeResolver.cs",
+      "sha256": "557ebfa593847cfe402531fca4ab05374e7451e138834c6ecbeb3c6c6f3d28b7"
+    }
+  ],
+  "properties": [
+    {
+      "name": "bodyCount",
+      "value": "14"
+    },
+    {
+      "name": "calculationRevision",
+      "value": "4"
+    },
+    {
+      "name": "campanusPolarFallback",
+      "value": "porphyry-above-66-degrees"
+    },
+    {
+      "name": "chironModel",
+      "value": "gravity-simulation:jpl-j2000-state"
+    },
+    {
+      "name": "chironSeedCenter",
+      "value": "500@10"
+    },
+    {
+      "name": "chironSeedEpoch",
+      "value": "2000-01-01T12:00:00 TDB"
+    },
+    {
+      "name": "chironSeedProvenanceStatus",
+      "value": "current-jpl-solution-verified"
+    },
+    {
+      "name": "chironSeedReferenceId",
+      "value": "jpl-horizons-chiron-seed-jpl171-j2000"
+    },
+    {
+      "name": "chironSeedReferencePlane",
+      "value": "FRAME:ICRF/J2000"
+    },
+    {
+      "name": "chironSeedTarget",
+      "value": "COMMAND=\u00272060;\u0027; JPL#171"
+    },
+    {
+      "name": "chironSeedUnits",
+      "value": "AU-D"
+    },
+    {
+      "name": "chironSeedVectorCorrection",
+      "value": "NONE"
+    },
+    {
+      "name": "chironSeedVx",
+      "value": "0.004971227226758336"
+    },
+    {
+      "name": "chironSeedVy",
+      "value": "-0.003626418894486951"
+    },
+    {
+      "name": "chironSeedVz",
+      "value": "-0.0008257960206970693"
+    },
+    {
+      "name": "chironSeedX",
+      "value": "-3.529597323721606"
+    },
+    {
+      "name": "chironSeedY",
+      "value": "-8.675401114502414"
+    },
+    {
+      "name": "chironSeedZ",
+      "value": "-2.935904700117773"
+    },
+    {
+      "name": "houseObliquityDegrees",
+      "value": "23.4393"
+    },
+    {
+      "name": "kochPolarFallback",
+      "value": "porphyry-above-60-degrees"
+    },
+    {
+      "name": "lilithModel",
+      "value": "mean-apogee"
+    },
+    {
+      "name": "lunarNodeModel",
+      "value": "mean"
+    },
+    {
+      "name": "placidusPolarFallback",
+      "value": "porphyry-above-60-degrees"
+    },
+    {
+      "name": "regiomontanusPolarFallback",
+      "value": "porphyry-above-66-degrees"
+    },
+    {
+      "name": "runtimeDependency:CosineKitty.AstronomyEngine",
+      "value": "2.1.19"
+    },
+    {
+      "name": "runtimeDependency:NodaTime",
+      "value": "3.3.3"
+    },
+    {
+      "name": "siderealTimeModel",
+      "value": "truncated-gmst"
+    },
+    {
+      "name": "stationSampleMinutes",
+      "value": "10"
+    }
+  ]
+}

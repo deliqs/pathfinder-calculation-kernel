@@ -1,0 +1,241 @@
+name: Certify calculation release inputs
+description: Builds, tests, reproduces, verifies the packed kernel, and emits release evidence.
+
+inputs:
+  package-version:
+    description: Exact package version to build and consume
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Validate exact package version
+      shell: bash
+      env:
+        REQUESTED_PACKAGE_VERSION: ${{ inputs.package-version }}
+      run: |
+        if [[ ! "$REQUESTED_PACKAGE_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+([-.][0-9A-Za-z.-]+)?$ ]]; then
+          echo "package-version must be a SemVer-compatible value" >&2
+          exit 1
+        fi
+        echo "PACKAGE_VERSION=$REQUESTED_PACKAGE_VERSION" >> "$GITHUB_ENV"
+
+    - name: Restore locked dependencies with audit enforcement
+      shell: bash
+      run: dotnet restore PathFinder.CalculationKernel.slnx --locked-mode -warnaserror
+
+    - name: Build warning-clean release binaries
+      shell: bash
+      run: >-
+        dotnet build PathFinder.CalculationKernel.slnx
+        --no-restore -c Release -warnaserror --no-incremental
+        -p:Version="$PACKAGE_VERSION"
+
+    - name: Test source projects
+      shell: bash
+      run: dotnet test PathFinder.CalculationKernel.slnx --no-build -c Release -p:Version="$PACKAGE_VERSION"
+
+    - name: Pack calculation kernel
+      shell: bash
+      run: >-
+        dotnet pack src/PathFinder.CalculationKernel/PathFinder.CalculationKernel.csproj
+        --no-build -c Release
+        -p:Version="$PACKAGE_VERSION"
+        --output artifacts/packages
+
+    - name: Reproduce twice from source
+      shell: bash
+      run: |
+        dotnet run --project tools/PathFinder.AccuracyBenchmark --no-build -c Release -- \
+          reproduce --offline --output artifacts/reproduction/source-1
+        dotnet run --project tools/PathFinder.AccuracyBenchmark --no-build -c Release -- \
+          reproduce --offline --output artifacts/reproduction/source-2
+
+    - name: Verify source reproduction bytes and hashes
+      shell: bash
+      run: |
+        expected_hash=$(awk '{ print $1 }' benchmark/results/results.sha256)
+        for result in \
+          benchmark/results/results.json \
+          artifacts/reproduction/source-1/results.json \
+          artifacts/reproduction/source-2/results.json
+        do
+          actual_hash=$(sha256sum "$result" | awk '{ print $1 }')
+          if [[ "$actual_hash" != "$expected_hash" ]]; then
+            echo "Unexpected result hash for $result: $actual_hash" >&2
+            exit 1
+          fi
+        done
+        cmp -s benchmark/results/results.json artifacts/reproduction/source-1/results.json
+        cmp -s benchmark/results/results.sha256 artifacts/reproduction/source-1/results.sha256
+        cmp -s benchmark/references/normalized.json artifacts/reproduction/source-1/normalized-references.json
+        cmp -s benchmark/provenance/calculation-source-manifest.json artifacts/reproduction/source-1/calculation-source-manifest.json
+        for output_name in \
+          results.json \
+          normalized-references.json \
+          calculation-source-manifest.json \
+          results.sha256
+        do
+          cmp -s \
+            "artifacts/reproduction/source-1/$output_name" \
+            "artifacts/reproduction/source-2/$output_name"
+        done
+
+    - name: Create a fresh packed-package cache
+      shell: bash
+      run: |
+        PACKED_NUGET_CACHE=$(mktemp -d "$RUNNER_TEMP/pathfinder-packed-nuget.XXXXXX")
+        PACKED_INTERMEDIATE_ROOT=$(mktemp -d "$RUNNER_TEMP/pathfinder-packed-obj.XXXXXX")
+        PACKED_OUTPUT_ROOT=$(mktemp -d "$RUNNER_TEMP/pathfinder-packed-bin.XXXXXX")
+        echo "PACKED_NUGET_CACHE=$PACKED_NUGET_CACHE" >> "$GITHUB_ENV"
+        echo "PACKED_INTERMEDIATE_ROOT=$PACKED_INTERMEDIATE_ROOT" >> "$GITHUB_ENV"
+        echo "PACKED_OUTPUT_ROOT=$PACKED_OUTPUT_ROOT" >> "$GITHUB_ENV"
+        echo "NUGET_PACKAGES=$PACKED_NUGET_CACHE" >> "$GITHUB_ENV"
+
+    - name: Restore packed-kernel test graph in isolation
+      shell: bash
+      run: |
+        dotnet restore tests/PathFinder.CalculationKernel.Tests/PathFinder.CalculationKernel.Tests.csproj \
+          --force-evaluate -warnaserror --configfile NuGet.Packed.config \
+          -p:UsePackedKernel=true -p:Version="$PACKAGE_VERSION" \
+          -p:RestoreLockedMode=false \
+          -p:RestorePackagesPath="$PACKED_NUGET_CACHE" \
+          -p:NuGetLockFilePath="$PACKED_INTERMEDIATE_ROOT/kernel-tests/packages.lock.json" \
+          -p:BaseIntermediateOutputPath="$PACKED_INTERMEDIATE_ROOT/kernel-tests/" \
+          -p:BaseOutputPath="$PACKED_OUTPUT_ROOT/kernel-tests/" \
+          -p:DefaultItemExcludes='obj/**'
+        dotnet restore tests/PathFinder.CalculationKernel.Tests/PathFinder.CalculationKernel.Tests.csproj \
+          --locked-mode -warnaserror --configfile NuGet.Packed.config \
+          -p:UsePackedKernel=true -p:Version="$PACKAGE_VERSION" \
+          -p:RestorePackagesPath="$PACKED_NUGET_CACHE" \
+          -p:NuGetLockFilePath="$PACKED_INTERMEDIATE_ROOT/kernel-tests/packages.lock.json" \
+          -p:BaseIntermediateOutputPath="$PACKED_INTERMEDIATE_ROOT/kernel-tests/" \
+          -p:BaseOutputPath="$PACKED_OUTPUT_ROOT/kernel-tests/" \
+          -p:DefaultItemExcludes='obj/**'
+
+    - name: Exercise the packed kernel with its contract tests
+      shell: bash
+      run: >-
+        dotnet test tests/PathFinder.CalculationKernel.Tests/PathFinder.CalculationKernel.Tests.csproj
+        --no-restore -c Release -warnaserror
+        -p:UsePackedKernel=true -p:Version="$PACKAGE_VERSION"
+        -p:RestorePackagesPath="$PACKED_NUGET_CACHE"
+        -p:NuGetLockFilePath="$PACKED_INTERMEDIATE_ROOT/kernel-tests/packages.lock.json"
+        -p:BaseIntermediateOutputPath="$PACKED_INTERMEDIATE_ROOT/kernel-tests/"
+        -p:BaseOutputPath="$PACKED_OUTPUT_ROOT/kernel-tests/"
+        -p:DefaultItemExcludes='obj/**'
+
+    - name: Restore packed benchmark runner in isolation
+      shell: bash
+      run: |
+        dotnet restore tools/PathFinder.AccuracyBenchmark/PathFinder.AccuracyBenchmark.csproj \
+          --force-evaluate -warnaserror --configfile NuGet.Packed.config \
+          -p:UsePackedKernel=true -p:Version="$PACKAGE_VERSION" \
+          -p:RestoreLockedMode=false \
+          -p:RestorePackagesPath="$PACKED_NUGET_CACHE" \
+          -p:NuGetLockFilePath="$PACKED_INTERMEDIATE_ROOT/benchmark/packages.lock.json" \
+          -p:BaseIntermediateOutputPath="$PACKED_INTERMEDIATE_ROOT/benchmark/" \
+          -p:BaseOutputPath="$PACKED_OUTPUT_ROOT/benchmark/" \
+          -p:DefaultItemExcludes='obj/**'
+        dotnet restore tools/PathFinder.AccuracyBenchmark/PathFinder.AccuracyBenchmark.csproj \
+          --locked-mode -warnaserror --configfile NuGet.Packed.config \
+          -p:UsePackedKernel=true -p:Version="$PACKAGE_VERSION" \
+          -p:RestorePackagesPath="$PACKED_NUGET_CACHE" \
+          -p:NuGetLockFilePath="$PACKED_INTERMEDIATE_ROOT/benchmark/packages.lock.json" \
+          -p:BaseIntermediateOutputPath="$PACKED_INTERMEDIATE_ROOT/benchmark/" \
+          -p:BaseOutputPath="$PACKED_OUTPUT_ROOT/benchmark/" \
+          -p:DefaultItemExcludes='obj/**'
+
+    - name: Verify restored package bytes
+      shell: bash
+      run: |
+        PACKED_NUPKG="artifacts/packages/PathFinder.CalculationKernel.${PACKAGE_VERSION}.nupkg"
+        RESTORED_NUPKG=$(find "$PACKED_NUGET_CACHE/pathfinder.calculationkernel" \
+          -type f -name 'pathfinder.calculationkernel.*.nupkg' -print -quit)
+        if [[ ! -f "$PACKED_NUPKG" || ! -f "$RESTORED_NUPKG" ]]; then
+          echo "Packed or restored nupkg is missing" >&2
+          exit 1
+        fi
+        cmp -s "$PACKED_NUPKG" "$RESTORED_NUPKG"
+
+    - name: Reproduce from the packed kernel
+      shell: bash
+      run: >-
+        dotnet run --project tools/PathFinder.AccuracyBenchmark
+        --no-restore -c Release
+        -p:UsePackedKernel=true -p:Version="$PACKAGE_VERSION"
+        -p:RestorePackagesPath="$PACKED_NUGET_CACHE"
+        -p:NuGetLockFilePath="$PACKED_INTERMEDIATE_ROOT/benchmark/packages.lock.json"
+        -p:BaseIntermediateOutputPath="$PACKED_INTERMEDIATE_ROOT/benchmark/"
+        -p:BaseOutputPath="$PACKED_OUTPUT_ROOT/benchmark/"
+        -p:DefaultItemExcludes='obj/**'
+        -- reproduce --offline --output artifacts/reproduction/packed
+
+    - name: Verify source and packed result equivalence
+      shell: bash
+      run: |
+        expected_hash=$(awk '{ print $1 }' benchmark/results/results.sha256)
+        packed_hash=$(sha256sum artifacts/reproduction/packed/results.json | awk '{ print $1 }')
+        if [[ "$packed_hash" != "$expected_hash" ]]; then
+          echo "Unexpected packed-kernel result hash: $packed_hash" >&2
+          exit 1
+        fi
+        for output_name in \
+          results.json \
+          normalized-references.json \
+          calculation-source-manifest.json \
+          results.sha256
+        do
+          cmp -s \
+            "artifacts/reproduction/source-1/$output_name" \
+            "artifacts/reproduction/packed/$output_name"
+        done
+
+    - name: Verify source-mode assets remain usable
+      shell: bash
+      run: >-
+        dotnet build tools/PathFinder.AccuracyBenchmark/PathFinder.AccuracyBenchmark.csproj
+        --no-restore -c Release -warnaserror --no-incremental
+        -p:Version="$PACKAGE_VERSION"
+
+    - name: Assemble certification bundle
+      shell: bash
+      run: |
+        mkdir -p artifacts/release/packages
+        cp artifacts/packages/*.*nupkg artifacts/release/packages/
+        cp -R artifacts/reproduction artifacts/release/
+        cp -R benchmark artifacts/release/
+
+    - name: Restore pinned SBOM tool
+      shell: bash
+      run: dotnet tool restore
+
+    - name: Generate and validate SBOM
+      shell: bash
+      run: |
+        dotnet sbom-tool generate \
+          -b artifacts/release \
+          -bc . \
+          -pn PathFinder.CalculationKernel \
+          -pv "$PACKAGE_VERSION" \
+          -ps "PathFinder contributors" \
+          -m artifacts/release \
+          -nsu "pathfinder-calculation-kernel-${SOURCE_REVISION}-${PACKAGE_VERSION}"
+        dotnet sbom-tool validate \
+          -b artifacts/release \
+          -n \
+          -mi spdx:2.2 \
+          -o artifacts/release/sbom-validation.json
+      env:
+        SOURCE_REVISION: ${{ github.sha }}
+
+    - name: Write certification bundle checksums
+      shell: bash
+      run: |
+        (
+          cd artifacts/release
+          find . -type f ! -name SHA256SUMS | LC_ALL=C sort | while IFS= read -r file
+          do
+            sha256sum "$file"
+          done > SHA256SUMS
+        )
