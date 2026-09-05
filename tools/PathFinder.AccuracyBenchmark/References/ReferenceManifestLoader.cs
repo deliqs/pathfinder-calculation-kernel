@@ -108,7 +108,8 @@ public static class ReferenceManifestLoader
             Require(double.IsFinite(request.EastPositiveLongitude),
                 $"{request.CaseId}.eastPositiveLongitude must be finite");
             Require(double.IsFinite(request.Latitude), $"{request.CaseId}.latitude must be finite");
-            Require(request.HouseSystemCode is "P" or "O", $"{request.CaseId}.houseSystemCode is invalid");
+            Require(request.HouseSystemCode is "P" or "K" or "R" or "C" or "O",
+                $"{request.CaseId}.houseSystemCode is invalid");
             Require(request.Arguments is not null && request.Arguments.Count > 0,
                 $"{request.CaseId}.arguments are required");
             var expected = SwissInvocationBuilder.BuildHouse(new Cases.HouseCase(

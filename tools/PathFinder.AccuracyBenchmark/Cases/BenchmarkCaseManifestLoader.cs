@@ -104,13 +104,39 @@ public static class BenchmarkCaseManifestLoader
             RequireFinite(row.EastPositiveLongitude, $"{row.Id}.eastPositiveLongitude");
             Require(row.EastPositiveLongitude is >= -180 and <= 180,
                 $"{row.Id}.eastPositiveLongitude is outside [-180,180]");
-            Require(row.RequestedSystem == "Placidus", $"{row.Id}.requestedSystem must be Placidus");
-            Require(row.ReferenceSystem is "Placidus" or "Porphyry",
-                $"{row.Id}.referenceSystem must be Placidus or Porphyry");
-            Require(row.SwissHouseSystemCode is "P" or "O", $"{row.Id}.swissHouseSystemCode must be P or O");
+            ValidateHouseSystems(row);
             RequirePositive(row.ToleranceArcsec, $"{row.Id}.toleranceArcsec");
         }
     }
+
+    private static void ValidateHouseSystems(HouseCase row)
+    {
+        Require(row.RequestedSystem is "Placidus" or "Koch" or "Regiomontanus" or "Campanus",
+            $"{row.Id}.requestedSystem must be Placidus, Koch, Regiomontanus, or Campanus");
+        Require(
+            row.ReferenceSystem is "Placidus" or "Koch" or "Regiomontanus" or "Campanus" or "Porphyry",
+            $"{row.Id}.referenceSystem must be Placidus, Koch, Regiomontanus, Campanus, or Porphyry");
+        Require(row.SwissHouseSystemCode is "P" or "K" or "R" or "C" or "O",
+            $"{row.Id}.swissHouseSystemCode must be P, K, R, C, or O");
+        if (row.ReferenceSystem == "Porphyry")
+        {
+            Require(row.SwissHouseSystemCode == "O",
+                $"{row.Id}: a Porphyry reference must use code O");
+            return;
+        }
+
+        Require(row.SwissHouseSystemCode == OwnHouseSystemCode(row.ReferenceSystem),
+            $"{row.Id}: a non-Porphyry reference must use its own code");
+    }
+
+    private static string OwnHouseSystemCode(string system) => system switch
+    {
+        "Placidus" => "P",
+        "Koch" => "K",
+        "Regiomontanus" => "R",
+        "Campanus" => "C",
+        _ => throw new InvalidDataException($"unsupported house system '{system}'")
+    };
 
     private static void ValidateTimings(IReadOnlyList<TimingCase> timings)
     {

@@ -61,7 +61,7 @@ public static partial class SwissOutputParser
 
     private static void ValidateExpectation(SwissOutputExpectation expectation)
     {
-        if (expectation.HouseSystemCode is not ("P" or "O"))
+        if (expectation.HouseSystemCode is not ("P" or "K" or "R" or "C" or "O"))
         {
             throw new InvalidDataException($"Unsupported Swiss house-system code: {expectation.HouseSystemCode}.");
         }

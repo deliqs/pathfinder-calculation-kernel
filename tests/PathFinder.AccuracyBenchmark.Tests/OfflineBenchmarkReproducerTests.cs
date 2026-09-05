@@ -21,7 +21,7 @@ public sealed class OfflineBenchmarkReproducerTests
             Assert.True(File.Exists(hashPath));
             using var document = JsonDocument.Parse(File.ReadAllBytes(resultsPath));
             Assert.Equal(44, document.RootElement.GetProperty("positions").GetArrayLength());
-            Assert.Equal(48, document.RootElement.GetProperty("houseCusps").GetArrayLength());
+            Assert.Equal(228, document.RootElement.GetProperty("houseCusps").GetArrayLength());
             Assert.Equal(6, document.RootElement.GetProperty("timings").GetArrayLength());
             Assert.Equal(3, document.RootElement.GetProperty("historicalTimes").GetArrayLength());
             Assert.Equal(

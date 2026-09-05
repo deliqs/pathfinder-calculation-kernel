@@ -20,6 +20,21 @@ public sealed partial class RepositoryBoundaryTests
             "benchmark/references/raw/swiss/new-york-eclipse.stdout.txt",
             "benchmark/references/raw/swiss/sydney-historical.stdout.txt",
             "benchmark/references/raw/swiss/tromso-polar.stdout.txt",
+            "benchmark/references/raw/swiss/london-j2000-koch.stdout.txt",
+            "benchmark/references/raw/swiss/london-j2000-regiomontanus.stdout.txt",
+            "benchmark/references/raw/swiss/london-j2000-campanus.stdout.txt",
+            "benchmark/references/raw/swiss/new-york-eclipse-koch.stdout.txt",
+            "benchmark/references/raw/swiss/new-york-eclipse-regiomontanus.stdout.txt",
+            "benchmark/references/raw/swiss/new-york-eclipse-campanus.stdout.txt",
+            "benchmark/references/raw/swiss/sydney-historical-koch.stdout.txt",
+            "benchmark/references/raw/swiss/sydney-historical-regiomontanus.stdout.txt",
+            "benchmark/references/raw/swiss/sydney-historical-campanus.stdout.txt",
+            "benchmark/references/raw/swiss/tromso-polar-koch.stdout.txt",
+            "benchmark/references/raw/swiss/tromso-polar-regiomontanus.stdout.txt",
+            "benchmark/references/raw/swiss/tromso-polar-campanus.stdout.txt",
+            "benchmark/references/raw/swiss/gothenburg-koch-midsummer.stdout.txt",
+            "benchmark/references/raw/swiss/reykjavik-regiomontanus-midsummer.stdout.txt",
+            "benchmark/references/raw/swiss/reykjavik-campanus-midsummer.stdout.txt",
             "benchmark/references/raw/swiss/version-identification.txt"
         };
 

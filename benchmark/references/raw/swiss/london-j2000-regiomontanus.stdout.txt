@@ -1,0 +1,20 @@
+house  1         186.9366677
+house  2         209.3826322
+house  3         238.8963915
+house  4         279.0388591
+house  5         317.4946230
+house  6         345.0883888
+house  7          6.9366677
+house  8         29.3826322
+house  9         58.8963915
+house 10         99.0388591
+house 11         137.4946230
+house 12         165.0883888
+Ascendant        186.9366677
+MC               99.0388591
+ARMC             99.8364489
+Vertex           16.2083264
+equat. Asc.      190.7013897
+co-Asc. W.Koch   202.9302661
+co-Asc Munkasey  187.9693017
+Polar Asc.       22.9302661

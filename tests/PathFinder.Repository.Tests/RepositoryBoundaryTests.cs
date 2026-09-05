@@ -12,7 +12,7 @@ public sealed partial class RepositoryBoundaryTests
             ["Microsoft.NET.Test.Sdk"] = "18.9.0",
             ["Microsoft.SourceLink.GitHub"] = "10.0.400",
             ["NodaTime"] = "3.3.3",
-            ["PathFinder.CalculationKernel"] = "0.1.0",
+            ["PathFinder.CalculationKernel"] = "1.0.0",
             ["xunit"] = "2.9.3",
             ["xunit.runner.visualstudio"] = "4.0.0"
         };

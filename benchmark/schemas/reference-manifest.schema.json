@@ -92,7 +92,7 @@
         "utJulianDate": { "type": "number" },
         "eastPositiveLongitude": { "type": "number" },
         "latitude": { "type": "number" },
-        "houseSystemCode": { "enum": ["P", "O"] },
+        "houseSystemCode": { "enum": ["P", "K", "R", "C", "O"] },
         "arguments": { "type": "array", "items": { "type": "string" } },
         "standardOutput": { "$ref": "#/$defs/rawArtifact" }
       }

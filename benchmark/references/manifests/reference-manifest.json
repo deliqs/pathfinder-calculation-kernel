@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "datasetRevision": "calculation-benchmark-4",
+  "datasetRevision": "calculation-benchmark-5",
   "jpl": {
     "apiSource": "NASA/JPL Horizons API",
     "apiVersion": "1.2",
@@ -5423,6 +5423,291 @@
         "standardOutput": {
           "path": "raw/swiss/tromso-polar.stdout.txt",
           "sha256": "e22c51c98d67f6b41b52e4ec50819db960b97896293d60d5e7613f07f09b3864"
+        }
+      },
+      {
+        "caseId": "london-j2000-koch",
+        "utJulianDate": 2451544.5,
+        "eastPositiveLongitude": -0.1278,
+        "latitude": 51.5074,
+        "houseSystemCode": "K",
+        "arguments": [
+          "-bj2451544.5",
+          "-ut",
+          "-p",
+          "-house-0.1278,51.5074,K",
+          "-fPl",
+          "-head"
+        ],
+        "standardOutput": {
+          "path": "raw/swiss/london-j2000-koch.stdout.txt",
+          "sha256": "cf90b961c599adfa4a391a59b9eab81886619b726beb231568871196c3cef280"
+        }
+      },
+      {
+        "caseId": "london-j2000-regiomontanus",
+        "utJulianDate": 2451544.5,
+        "eastPositiveLongitude": -0.1278,
+        "latitude": 51.5074,
+        "houseSystemCode": "R",
+        "arguments": [
+          "-bj2451544.5",
+          "-ut",
+          "-p",
+          "-house-0.1278,51.5074,R",
+          "-fPl",
+          "-head"
+        ],
+        "standardOutput": {
+          "path": "raw/swiss/london-j2000-regiomontanus.stdout.txt",
+          "sha256": "9fca8c0c571a618f3416db8182da084c024b4d6a40a2289db54e618a6555db05"
+        }
+      },
+      {
+        "caseId": "london-j2000-campanus",
+        "utJulianDate": 2451544.5,
+        "eastPositiveLongitude": -0.1278,
+        "latitude": 51.5074,
+        "houseSystemCode": "C",
+        "arguments": [
+          "-bj2451544.5",
+          "-ut",
+          "-p",
+          "-house-0.1278,51.5074,C",
+          "-fPl",
+          "-head"
+        ],
+        "standardOutput": {
+          "path": "raw/swiss/london-j2000-campanus.stdout.txt",
+          "sha256": "8c59fcb2c33e832ff999504a9bbce510f0224665b3174bed07d00dc731d1e1e6"
+        }
+      },
+      {
+        "caseId": "new-york-eclipse-koch",
+        "utJulianDate": 2460409.25,
+        "eastPositiveLongitude": -74.006,
+        "latitude": 40.7128,
+        "houseSystemCode": "K",
+        "arguments": [
+          "-bj2460409.25",
+          "-ut",
+          "-p",
+          "-house-74.006,40.7128,K",
+          "-fPl",
+          "-head"
+        ],
+        "standardOutput": {
+          "path": "raw/swiss/new-york-eclipse-koch.stdout.txt",
+          "sha256": "f8b141d363feecf385b2aa94b69aab04a32238c728536870f77a3e3443df6681"
+        }
+      },
+      {
+        "caseId": "new-york-eclipse-regiomontanus",
+        "utJulianDate": 2460409.25,
+        "eastPositiveLongitude": -74.006,
+        "latitude": 40.7128,
+        "houseSystemCode": "R",
+        "arguments": [
+          "-bj2460409.25",
+          "-ut",
+          "-p",
+          "-house-74.006,40.7128,R",
+          "-fPl",
+          "-head"
+        ],
+        "standardOutput": {
+          "path": "raw/swiss/new-york-eclipse-regiomontanus.stdout.txt",
+          "sha256": "b5e3862bcf55d45bcc9f03750d561ab7b3ecf1b486a83fd4dbaabfea2c1ffa19"
+        }
+      },
+      {
+        "caseId": "new-york-eclipse-campanus",
+        "utJulianDate": 2460409.25,
+        "eastPositiveLongitude": -74.006,
+        "latitude": 40.7128,
+        "houseSystemCode": "C",
+        "arguments": [
+          "-bj2460409.25",
+          "-ut",
+          "-p",
+          "-house-74.006,40.7128,C",
+          "-fPl",
+          "-head"
+        ],
+        "standardOutput": {
+          "path": "raw/swiss/new-york-eclipse-campanus.stdout.txt",
+          "sha256": "32266388b4383c792869a043857e0cc09fe0fd3f8b40d8de1f17aa462d6699c8"
+        }
+      },
+      {
+        "caseId": "sydney-historical-koch",
+        "utJulianDate": 2433282.5,
+        "eastPositiveLongitude": 151.2093,
+        "latitude": -33.8688,
+        "houseSystemCode": "K",
+        "arguments": [
+          "-bj2433282.5",
+          "-ut",
+          "-p",
+          "-house151.2093,-33.8688,K",
+          "-fPl",
+          "-head"
+        ],
+        "standardOutput": {
+          "path": "raw/swiss/sydney-historical-koch.stdout.txt",
+          "sha256": "f7a7d88896af74feab6d4c85397b3f6343a36c737af5224f165555a1af76fa19"
+        }
+      },
+      {
+        "caseId": "sydney-historical-regiomontanus",
+        "utJulianDate": 2433282.5,
+        "eastPositiveLongitude": 151.2093,
+        "latitude": -33.8688,
+        "houseSystemCode": "R",
+        "arguments": [
+          "-bj2433282.5",
+          "-ut",
+          "-p",
+          "-house151.2093,-33.8688,R",
+          "-fPl",
+          "-head"
+        ],
+        "standardOutput": {
+          "path": "raw/swiss/sydney-historical-regiomontanus.stdout.txt",
+          "sha256": "fbefcbfdb8bdf6bf42bdd317cbb332aac342d6b06bb6c54280d5ea4f6675a5ca"
+        }
+      },
+      {
+        "caseId": "sydney-historical-campanus",
+        "utJulianDate": 2433282.5,
+        "eastPositiveLongitude": 151.2093,
+        "latitude": -33.8688,
+        "houseSystemCode": "C",
+        "arguments": [
+          "-bj2433282.5",
+          "-ut",
+          "-p",
+          "-house151.2093,-33.8688,C",
+          "-fPl",
+          "-head"
+        ],
+        "standardOutput": {
+          "path": "raw/swiss/sydney-historical-campanus.stdout.txt",
+          "sha256": "068ea0e5eb94a59a8676957a7d4d5882ee04836a4b22de7308417a6f98de92c0"
+        }
+      },
+      {
+        "caseId": "tromso-polar-koch",
+        "utJulianDate": 2460483,
+        "eastPositiveLongitude": 18.9553,
+        "latitude": 69.6492,
+        "houseSystemCode": "O",
+        "arguments": [
+          "-bj2460483",
+          "-ut",
+          "-p",
+          "-house18.9553,69.6492,O",
+          "-fPl",
+          "-head"
+        ],
+        "standardOutput": {
+          "path": "raw/swiss/tromso-polar-koch.stdout.txt",
+          "sha256": "e22c51c98d67f6b41b52e4ec50819db960b97896293d60d5e7613f07f09b3864"
+        }
+      },
+      {
+        "caseId": "tromso-polar-regiomontanus",
+        "utJulianDate": 2460483,
+        "eastPositiveLongitude": 18.9553,
+        "latitude": 69.6492,
+        "houseSystemCode": "O",
+        "arguments": [
+          "-bj2460483",
+          "-ut",
+          "-p",
+          "-house18.9553,69.6492,O",
+          "-fPl",
+          "-head"
+        ],
+        "standardOutput": {
+          "path": "raw/swiss/tromso-polar-regiomontanus.stdout.txt",
+          "sha256": "e22c51c98d67f6b41b52e4ec50819db960b97896293d60d5e7613f07f09b3864"
+        }
+      },
+      {
+        "caseId": "tromso-polar-campanus",
+        "utJulianDate": 2460483,
+        "eastPositiveLongitude": 18.9553,
+        "latitude": 69.6492,
+        "houseSystemCode": "O",
+        "arguments": [
+          "-bj2460483",
+          "-ut",
+          "-p",
+          "-house18.9553,69.6492,O",
+          "-fPl",
+          "-head"
+        ],
+        "standardOutput": {
+          "path": "raw/swiss/tromso-polar-campanus.stdout.txt",
+          "sha256": "e22c51c98d67f6b41b52e4ec50819db960b97896293d60d5e7613f07f09b3864"
+        }
+      },
+      {
+        "caseId": "gothenburg-koch-midsummer",
+        "utJulianDate": 2460483,
+        "eastPositiveLongitude": 11.9746,
+        "latitude": 57.7089,
+        "houseSystemCode": "K",
+        "arguments": [
+          "-bj2460483",
+          "-ut",
+          "-p",
+          "-house11.9746,57.7089,K",
+          "-fPl",
+          "-head"
+        ],
+        "standardOutput": {
+          "path": "raw/swiss/gothenburg-koch-midsummer.stdout.txt",
+          "sha256": "87cd414712f6277070a1378d0235a09bf56ed6e743d778dceb6e61f52181faf9"
+        }
+      },
+      {
+        "caseId": "reykjavik-regiomontanus-midsummer",
+        "utJulianDate": 2460483,
+        "eastPositiveLongitude": -21.9426,
+        "latitude": 64.1466,
+        "houseSystemCode": "R",
+        "arguments": [
+          "-bj2460483",
+          "-ut",
+          "-p",
+          "-house-21.9426,64.1466,R",
+          "-fPl",
+          "-head"
+        ],
+        "standardOutput": {
+          "path": "raw/swiss/reykjavik-regiomontanus-midsummer.stdout.txt",
+          "sha256": "d4023bbc8c42a87b79c5418c93314aaa3c03946c660925a54e40b2ad2d874e0a"
+        }
+      },
+      {
+        "caseId": "reykjavik-campanus-midsummer",
+        "utJulianDate": 2460483,
+        "eastPositiveLongitude": -21.9426,
+        "latitude": 64.1466,
+        "houseSystemCode": "C",
+        "arguments": [
+          "-bj2460483",
+          "-ut",
+          "-p",
+          "-house-21.9426,64.1466,C",
+          "-fPl",
+          "-head"
+        ],
+        "standardOutput": {
+          "path": "raw/swiss/reykjavik-campanus-midsummer.stdout.txt",
+          "sha256": "fa3518f21d1442729cff3ee53eb4d867e64e091deab19095e6c7a39ccd2eb340"
         }
       }
     ]

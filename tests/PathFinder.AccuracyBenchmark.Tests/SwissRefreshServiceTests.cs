@@ -29,7 +29,7 @@ public sealed class SwissRefreshServiceTests
 
             Assert.Equal(frozenBefore, TreeSnapshot.Capture(frozen));
             Assert.StartsWith("..", Path.GetRelativePath(frozen, output), StringComparison.Ordinal);
-            Assert.Equal(5, runner.Invocations.Count);
+            Assert.Equal(20, runner.Invocations.Count);
             Assert.Equal(["-h"], runner.Invocations[0].Arguments);
             Assert.All(runner.Invocations.Skip(1), invocation =>
                 Assert.Equal("-fPl", invocation.Arguments[^2]));
@@ -41,7 +41,7 @@ public sealed class SwissRefreshServiceTests
             Assert.Null(candidate.BuildCommand);
             Assert.Equal(Sha256Verifier.Hash(Encoding.UTF8.GetBytes("independent executable")),
                 candidate.ExecutableSha256);
-            Assert.Equal(4, candidate.Requests.Count);
+            Assert.Equal(19, candidate.Requests.Count);
             Assert.Equal(Encoding.UTF8.GetBytes("Version: 2.10.03\n"), await File.ReadAllBytesAsync(
                 Path.Combine(output, candidate.VersionOutput.Path)));
             Assert.True(File.Exists(Path.Combine(output, "swiss-reference-candidate.json")));

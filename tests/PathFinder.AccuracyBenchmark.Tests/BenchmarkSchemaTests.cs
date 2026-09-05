@@ -112,6 +112,36 @@ public sealed class BenchmarkSchemaTests
     }
 
     [Fact]
+    public void CasesSchema_AllowsKochRegiomontanusCampanusAndPorphyryHouseRows()
+    {
+        using var document = JsonDocument.Parse(File.ReadAllBytes(
+            RepositoryPaths.File("benchmark", "schemas", "cases.schema.json")));
+        var properties = document.RootElement.GetProperty("$defs")
+            .GetProperty("houseCase").GetProperty("properties");
+
+        Assert.Equal(
+            ["Placidus", "Koch", "Regiomontanus", "Campanus"],
+            EnumValues(properties.GetProperty("requestedSystem")));
+        Assert.Equal(
+            ["Placidus", "Koch", "Regiomontanus", "Campanus", "Porphyry"],
+            EnumValues(properties.GetProperty("referenceSystem")));
+        Assert.Equal(
+            ["P", "K", "R", "C", "O"],
+            EnumValues(properties.GetProperty("swissHouseSystemCode")));
+    }
+
+    [Fact]
+    public void ReferenceSchema_AllowsKochRegiomontanusCampanusAndPorphyryHouseCodes()
+    {
+        using var document = JsonDocument.Parse(File.ReadAllBytes(
+            RepositoryPaths.File("benchmark", "schemas", "reference-manifest.schema.json")));
+        var code = document.RootElement.GetProperty("$defs")
+            .GetProperty("swissRequest").GetProperty("properties").GetProperty("houseSystemCode");
+
+        Assert.Equal(["P", "K", "R", "C", "O"], EnumValues(code));
+    }
+
+    [Fact]
     public void ReferenceSchema_RecordsSwissBuildExecutableAndEnvironmentProvenance()
     {
         using var document = JsonDocument.Parse(File.ReadAllBytes(
@@ -138,4 +168,7 @@ public sealed class BenchmarkSchemaTests
 
     private static decimal MultipleOf(JsonElement properties, string name) =>
         properties.GetProperty(name).GetProperty("multipleOf").GetDecimal();
+
+    private static string[] EnumValues(JsonElement schema) =>
+        schema.GetProperty("enum").EnumerateArray().Select(value => value.GetString()!).ToArray();
 }

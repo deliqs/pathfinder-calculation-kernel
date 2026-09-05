@@ -91,7 +91,7 @@
         "type": "Project",
         "dependencies": {
           "NodaTime": "[3.3.3, )",
-          "PathFinder.CalculationKernel": "[0.1.0, )"
+          "PathFinder.CalculationKernel": "[1.0.0, )"
         }
       },
       "pathfinder.calculationkernel": {

@@ -24,8 +24,8 @@ dotnet run --project tools/PathFinder.AccuracyBenchmark -c Release -- \
 ```
 
 The output path must not already exist and must be outside `benchmark/`. The command performs no
-HTTP calls and does not execute Swiss Ephemeris. It verifies all 63 archived reference artifacts
-(58 JPL response/header files, four Swiss raw house outputs, and one minimal derived Swiss version
+HTTP calls and does not execute Swiss Ephemeris. It verifies all 78 archived reference artifacts
+(58 JPL response/header files, nineteen Swiss raw house outputs, and one minimal derived Swiss version
 identification) against the frozen manifest before parsing them and writes:
 
 - `results.json`
@@ -41,7 +41,7 @@ The generated files must be byte-identical to the published counterparts:
 - `benchmark/provenance/calculation-source-manifest.json`
 
 The published `results.json` SHA-256 is
-`6329e23002c356991ea270d0940d4fa167114a070fa5eec9e652fc2bd4d3f219`.
+`d3622e983007e1854c6928be2a6e11dae7939a33a4c3725eae4829dac8be87df`.
 
 ## Refresh candidates
 
@@ -63,6 +63,6 @@ LC_ALL=C TZ=UTC dotnet run --project tools/PathFinder.AccuracyBenchmark -c Relea
 
 Swiss Ephemeris itself is not distributed here. The frozen manifest records its source repository,
 tag, exact commit, build command, executable hash, environment, arguments, a derived one-line
-version-identification artifact, and four exact house standard-output files. Full `swetest -h`
+version-identification artifact, and nineteen exact house standard-output files. Full `swetest -h`
 output is validated in memory during refresh but is not archived. See `spec/benchmark-spec.md` for
 the measurement contract and limitations.

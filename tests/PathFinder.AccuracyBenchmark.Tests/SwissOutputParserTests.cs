@@ -36,6 +36,35 @@ public sealed class SwissOutputParserTests
     }
 
     [Theory]
+    [InlineData("K")]
+    [InlineData("R")]
+    [InlineData("C")]
+    [InlineData("O")]
+    public void Parse_SupportedHouseSystemCode_ReturnsTwelveCusps(string code)
+    {
+        const string output = """
+            house  1       10.0
+            house  2       20.0
+            house  3       30.0
+            house  4       40.0
+            house  5       50.0
+            house  6       60.0
+            house  7       70.0
+            house  8       80.0
+            house  9       90.0
+            house 10      100.0
+            house 11      110.0
+            house 12      120.0
+            """;
+        var expectation = new SwissOutputExpectation("case", code, 2451544.5, 0, 0);
+
+        var actual = SwissOutputParser.Parse(output, expectation);
+
+        Assert.Equal(12, actual.Count);
+        Assert.Equal(Enumerable.Range(1, 12), actual.Select(row => row.Cusp));
+    }
+
+    [Theory]
     [InlineData("house 1 10")]
     [InlineData("fatal error: ephemeris path missing")]
     public void Parse_MalformedOrIncompleteOutput_Throws(string output)

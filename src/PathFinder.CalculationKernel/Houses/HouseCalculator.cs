@@ -4,7 +4,8 @@ namespace PathFinder.CalculationKernel.Houses;
 
 /// <summary>
 /// Calculates the seven supported kernel house systems. The published external-reference
-/// benchmark is scoped to Placidus. Fixed obliquity and the truncated GMST series are deliberate.
+/// benchmark archives Placidus, Koch, Regiomontanus, and Campanus rows. Fixed obliquity
+/// and the truncated GMST series are deliberate.
 /// </summary>
 public sealed class HouseCalculator
 {
@@ -42,14 +43,14 @@ public sealed class HouseCalculator
         return new EclipticPosition { Longitude = longitude };
     }
 
-    internal EclipticPosition CalculateAscendantFromMc(double mcLongitude, double latitude)
+    public EclipticPosition CalculateAscendantFromMc(double mcLongitude, double latitude)
     {
         var ramc = AstroMath.CalculateRamc(mcLongitude, Obliquity);
         var ascLongitude = CalculateAscendantLongitude(ramc, latitude);
         return new EclipticPosition { Longitude = ascLongitude };
     }
 
-    internal IReadOnlyList<HouseCusp> CalculateHousesFromMc(
+    public IReadOnlyList<HouseCusp> CalculateHousesFromMc(
         double mcLongitude,
         double latitude,
         HouseSystem system)

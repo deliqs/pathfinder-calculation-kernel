@@ -6,8 +6,10 @@ on:
       version:
         description: SemVer package version to build
         required: true
-        default: 0.1.0
+        default: 1.0.0
         type: string
+  push:
+    tags: ['v*']
 
 permissions:
   contents: read
@@ -19,7 +21,6 @@ jobs:
     env:
       DOTNET_CLI_TELEMETRY_OPTOUT: 1
       DOTNET_NOLOGO: true
-      PACKAGE_VERSION: ${{ inputs.version }}
     steps:
       - name: Check out source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -31,22 +32,125 @@ jobs:
         with:
           global-json-file: global.json
 
-      - name: Validate package version
+      - name: Resolve package version
+        env:
+          INPUT_VERSION: ${{ inputs.version }}
         shell: bash
         run: |
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            PACKAGE_VERSION="${GITHUB_REF_NAME#v}"
+          else
+            PACKAGE_VERSION="$INPUT_VERSION"
+          fi
           if [[ ! "$PACKAGE_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+([-.][0-9A-Za-z.-]+)?$ ]]; then
             echo "version must be a SemVer-compatible value" >&2
             exit 1
           fi
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            props_version="$(sed -n 's/.*<Version>\([^<]*\)<\/Version>.*/\1/p' Directory.Build.props | head -n 1)"
+            if [[ "$props_version" != "$PACKAGE_VERSION" ]]; then
+              echo "Directory.Build.props <Version> ($props_version) does not match tag version ($PACKAGE_VERSION)" >&2
+              exit 1
+            fi
+          fi
+          echo "PACKAGE_VERSION=$PACKAGE_VERSION" >> "$GITHUB_ENV"
 
       - name: Build and certify release inputs
         uses: ./.github/actions/certify
         with:
-          package-version: ${{ inputs.version }}
+          package-version: ${{ env.PACKAGE_VERSION }}
 
       - name: Upload release candidate
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
-          name: calculation-kernel-${{ inputs.version }}
+          name: calculation-kernel-${{ env.PACKAGE_VERSION }}
           path: artifacts/release
           if-no-files-found: error
+
+  publish:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: release-candidate
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      id-token: write
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: 1
+      DOTNET_NOLOGO: true
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          global-json-file: global.json
+
+      - name: Resolve package version
+        shell: bash
+        run: echo "PACKAGE_VERSION=${GITHUB_REF_NAME#v}" >> "$GITHUB_ENV"
+
+      - name: Download certification bundle
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7
+        with:
+          name: calculation-kernel-${{ env.PACKAGE_VERSION }}
+          path: artifacts/release
+
+      - name: Verify certification bundle checksums
+        shell: bash
+        working-directory: artifacts/release
+        run: sha256sum -c SHA256SUMS
+
+      - name: NuGet login (OIDC, short-lived API key)
+        id: nuget-login
+        uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1
+        with:
+          user: pathfinder-charts
+
+      - name: Publish NuGet package
+        shell: bash
+        run: |
+          nupkg="artifacts/release/packages/PathFinder.CalculationKernel.${PACKAGE_VERSION}.nupkg"
+          snupkg="artifacts/release/packages/PathFinder.CalculationKernel.${PACKAGE_VERSION}.snupkg"
+          dotnet nuget push "$nupkg" --source https://api.nuget.org/v3/index.json --api-key "${{ steps.nuget-login.outputs.NUGET_API_KEY }}" --skip-duplicate
+          dotnet nuget push "$snupkg" --source https://api.nuget.org/v3/index.json --api-key "${{ steps.nuget-login.outputs.NUGET_API_KEY }}" --skip-duplicate
+
+      - name: Create GitHub release
+        shell: bash
+        run: |
+          dataset_revision="$(jq -r .datasetRevision artifacts/release/benchmark/cases/cases.json)"
+          results_sha256="$(awk '{ print $1 }' artifacts/release/benchmark/results/results.sha256)"
+          nupkg="artifacts/release/packages/PathFinder.CalculationKernel.${PACKAGE_VERSION}.nupkg"
+          nupkg_sha256="$(sha256sum "$nupkg" | awk '{ print $1 }')"
+          tarball="calculation-kernel-${PACKAGE_VERSION}-certification.tgz"
+          tar czf "$tarball" -C artifacts/release .
+          tarball_sha256="$(sha256sum "$tarball" | awk '{ print $1 }')"
+          notes="$(mktemp)"
+          cat > "$notes" <<EOF
+          Dataset revision: ${dataset_revision}
+
+          benchmark/results/results.sha256:
+          ${results_sha256}
+
+          PathFinder.CalculationKernel.${PACKAGE_VERSION}.nupkg SHA-256:
+          ${nupkg_sha256}
+
+          Certification bundle tarball SHA-256:
+          ${tarball_sha256}
+
+          Reproduce against this tag:
+
+          git clone --branch v${PACKAGE_VERSION} --depth 1 https://github.com/deliqs/pathfinder-calculation-kernel.git
+          EOF
+          gh release create "$GITHUB_REF_NAME" \
+            --verify-tag \
+            --title "PathFinder Calculation Kernel ${PACKAGE_VERSION}" \
+            --notes-file "$notes" \
+            artifacts/release/packages/*.nupkg \
+            artifacts/release/packages/*.snupkg \
+            artifacts/release/SHA256SUMS \
+            "$tarball"

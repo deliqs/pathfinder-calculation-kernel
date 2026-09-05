@@ -38,9 +38,9 @@ public sealed partial class RepositoryBoundaryTests
             .Descendants("PackageVersion")
             .SingleOrDefault(element => element.Attribute("Include")?.Value == packageName)
             ?.Attribute("Version")?.Value;
-        if (packageVersion != "0.1.0")
+        if (packageVersion != "1.0.0")
         {
-            violations.Add($"Expected {packageName} package-consumption version 0.1.0; found {packageVersion ?? "missing"}");
+            violations.Add($"Expected {packageName} package-consumption version 1.0.0; found {packageVersion ?? "missing"}");
         }
 
         var consumers = new[]

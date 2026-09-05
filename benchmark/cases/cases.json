@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "datasetRevision": "calculation-benchmark-4",
+  "datasetRevision": "calculation-benchmark-5",
   "positions": {
     "bodies": [
       {
@@ -143,6 +143,156 @@
       "requestedSystem": "Placidus",
       "referenceSystem": "Porphyry",
       "swissHouseSystemCode": "O",
+      "toleranceArcsec": 3600
+    },
+    {
+      "id": "london-j2000-koch",
+      "utc": "2000-01-01T00:00:00Z",
+      "latitude": 51.5074,
+      "eastPositiveLongitude": -0.1278,
+      "requestedSystem": "Koch",
+      "referenceSystem": "Koch",
+      "swissHouseSystemCode": "K",
+      "toleranceArcsec": 3600
+    },
+    {
+      "id": "london-j2000-regiomontanus",
+      "utc": "2000-01-01T00:00:00Z",
+      "latitude": 51.5074,
+      "eastPositiveLongitude": -0.1278,
+      "requestedSystem": "Regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "swissHouseSystemCode": "R",
+      "toleranceArcsec": 3600
+    },
+    {
+      "id": "london-j2000-campanus",
+      "utc": "2000-01-01T00:00:00Z",
+      "latitude": 51.5074,
+      "eastPositiveLongitude": -0.1278,
+      "requestedSystem": "Campanus",
+      "referenceSystem": "Campanus",
+      "swissHouseSystemCode": "C",
+      "toleranceArcsec": 3600
+    },
+    {
+      "id": "new-york-eclipse-koch",
+      "utc": "2024-04-08T18:00:00Z",
+      "latitude": 40.7128,
+      "eastPositiveLongitude": -74.006,
+      "requestedSystem": "Koch",
+      "referenceSystem": "Koch",
+      "swissHouseSystemCode": "K",
+      "toleranceArcsec": 3600
+    },
+    {
+      "id": "new-york-eclipse-regiomontanus",
+      "utc": "2024-04-08T18:00:00Z",
+      "latitude": 40.7128,
+      "eastPositiveLongitude": -74.006,
+      "requestedSystem": "Regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "swissHouseSystemCode": "R",
+      "toleranceArcsec": 3600
+    },
+    {
+      "id": "new-york-eclipse-campanus",
+      "utc": "2024-04-08T18:00:00Z",
+      "latitude": 40.7128,
+      "eastPositiveLongitude": -74.006,
+      "requestedSystem": "Campanus",
+      "referenceSystem": "Campanus",
+      "swissHouseSystemCode": "C",
+      "toleranceArcsec": 3600
+    },
+    {
+      "id": "sydney-historical-koch",
+      "utc": "1950-01-01T00:00:00Z",
+      "latitude": -33.8688,
+      "eastPositiveLongitude": 151.2093,
+      "requestedSystem": "Koch",
+      "referenceSystem": "Koch",
+      "swissHouseSystemCode": "K",
+      "toleranceArcsec": 3600
+    },
+    {
+      "id": "sydney-historical-regiomontanus",
+      "utc": "1950-01-01T00:00:00Z",
+      "latitude": -33.8688,
+      "eastPositiveLongitude": 151.2093,
+      "requestedSystem": "Regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "swissHouseSystemCode": "R",
+      "toleranceArcsec": 3600
+    },
+    {
+      "id": "sydney-historical-campanus",
+      "utc": "1950-01-01T00:00:00Z",
+      "latitude": -33.8688,
+      "eastPositiveLongitude": 151.2093,
+      "requestedSystem": "Campanus",
+      "referenceSystem": "Campanus",
+      "swissHouseSystemCode": "C",
+      "toleranceArcsec": 3600
+    },
+    {
+      "id": "tromso-polar-koch",
+      "utc": "2024-06-21T12:00:00Z",
+      "latitude": 69.6492,
+      "eastPositiveLongitude": 18.9553,
+      "requestedSystem": "Koch",
+      "referenceSystem": "Porphyry",
+      "swissHouseSystemCode": "O",
+      "toleranceArcsec": 3600
+    },
+    {
+      "id": "tromso-polar-regiomontanus",
+      "utc": "2024-06-21T12:00:00Z",
+      "latitude": 69.6492,
+      "eastPositiveLongitude": 18.9553,
+      "requestedSystem": "Regiomontanus",
+      "referenceSystem": "Porphyry",
+      "swissHouseSystemCode": "O",
+      "toleranceArcsec": 3600
+    },
+    {
+      "id": "tromso-polar-campanus",
+      "utc": "2024-06-21T12:00:00Z",
+      "latitude": 69.6492,
+      "eastPositiveLongitude": 18.9553,
+      "requestedSystem": "Campanus",
+      "referenceSystem": "Porphyry",
+      "swissHouseSystemCode": "O",
+      "toleranceArcsec": 3600
+    },
+    {
+      "id": "gothenburg-koch-midsummer",
+      "utc": "2024-06-21T12:00:00Z",
+      "latitude": 57.7089,
+      "eastPositiveLongitude": 11.9746,
+      "requestedSystem": "Koch",
+      "referenceSystem": "Koch",
+      "swissHouseSystemCode": "K",
+      "toleranceArcsec": 3600
+    },
+    {
+      "id": "reykjavik-regiomontanus-midsummer",
+      "utc": "2024-06-21T12:00:00Z",
+      "latitude": 64.1466,
+      "eastPositiveLongitude": -21.9426,
+      "requestedSystem": "Regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "swissHouseSystemCode": "R",
+      "toleranceArcsec": 3600
+    },
+    {
+      "id": "reykjavik-campanus-midsummer",
+      "utc": "2024-06-21T12:00:00Z",
+      "latitude": 64.1466,
+      "eastPositiveLongitude": -21.9426,
+      "requestedSystem": "Campanus",
+      "referenceSystem": "Campanus",
+      "swissHouseSystemCode": "C",
       "toleranceArcsec": 3600
     }
   ],

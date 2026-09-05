@@ -2,13 +2,21 @@
 
 This repository is the public source boundary for PathFinder's calculation kernel and accuracy benchmark. Its purpose is narrow: a pinned release must let an unauthenticated reader rebuild the same calculation package PathFinder consumes and reproduce the published benchmark from versioned cases and archived reference evidence.
 
-## Status
+## Releases
 
-The repository is being assembled and has no certified public release yet. The `0.1.0` package metadata is a staging identity, not a reproducibility claim. Do not cite a result until a release contains the calculation source, frozen reference bundle, canonical result checksum, and clean-room verification record.
+Each release is an immutable Git tag `vX.Y.Z`. Its GitHub release page, `https://github.com/deliqs/pathfinder-calculation-kernel/releases/tag/vX.Y.Z`, carries the certification bundle (`packages/`, `reproduction/`, `benchmark/`, SBOM, `SHA256SUMS`) and the NuGet package `PathFinder.CalculationKernel` at the same version. The current package version is declared in `Directory.Build.props`.
+
+Reproduce against a tag:
+
+```bash
+git clone --branch <tag> --depth 1 https://github.com/deliqs/pathfinder-calculation-kernel.git
+```
+
+Compare `benchmark/results/results.sha256` with the certification bundle. Verify a downloaded nupkg SHA-256 against `SHA256SUMS`.
 
 ## Boundary
 
-The public package covers benchmark-exercised calculations and the supported Koch, Regiomontanus, and Campanus house calculations. The latter systems are covered by Swiss-output oracle unit tests, not benchmark rows. It does not publish PathFinder's APIs, authentication, databases, interpretation and RAG systems, prompts, user data, billing, UI, infrastructure, or deployment configuration.
+The public package covers benchmark-exercised calculations, including Placidus, Koch, Regiomontanus, and Campanus house calculations. It does not publish PathFinder's APIs, authentication, databases, interpretation and RAG systems, prompts, user data, billing, UI, infrastructure, or deployment configuration.
 
 Runtime calculation dependencies are deliberately limited to:
 
@@ -41,7 +49,7 @@ dotnet run --project tools/PathFinder.AccuracyBenchmark --no-build -c Release --
   reproduce --offline --output artifacts/reproduction/local
 ```
 
-The output path must be new and outside `benchmark/`. The command verifies all 63 archived reference artifacts against the frozen manifest: 58 JPL response/header files, four Swiss raw stdout files, and one minimal derived version-identification file. It performs no HTTP calls and does not execute Swiss Ephemeris. It writes canonical results, their checksum, normalized references, and a manifest binding the calculation output to the public kernel source. See `benchmark/README.md` for the exact published counterparts and current checksum.
+The output path must be new and outside `benchmark/`. The command verifies all 78 archived reference artifacts against the frozen manifest: 58 JPL response/header files, nineteen Swiss raw stdout files, and one minimal derived version-identification file. It performs no HTTP calls and does not execute Swiss Ephemeris. It writes canonical results, their checksum, normalized references, and a manifest binding the calculation output to the public kernel source. See `benchmark/README.md` for the exact published counterparts and current checksum.
 
 ## Refresh reference candidates
 

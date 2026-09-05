@@ -13,9 +13,9 @@ public sealed class BenchmarkCaseManifestTests
         var manifest = BenchmarkCaseManifestLoader.Load(File.ReadAllBytes(path));
 
         Assert.Equal(2, manifest.SchemaVersion);
-        Assert.Equal("calculation-benchmark-4", manifest.DatasetRevision);
+        Assert.Equal("calculation-benchmark-5", manifest.DatasetRevision);
         Assert.Equal(44, manifest.Positions.Count);
-        Assert.Equal(4, manifest.Houses.Count);
+        Assert.Equal(19, manifest.Houses.Count);
         Assert.Equal(6, manifest.Timings.Count);
         Assert.Equal(3, manifest.HistoricalTimes.Count);
         Assert.Equal(11, manifest.Positions.Select(row => row.Body).Distinct().Count());
@@ -173,6 +173,77 @@ public sealed class BenchmarkCaseManifestTests
 
         Assert.Contains("extremum", error.Message, StringComparison.Ordinal);
     }
+
+    [Theory]
+    [InlineData("Koch", "Koch", "K")]
+    [InlineData("Regiomontanus", "Regiomontanus", "R")]
+    [InlineData("Campanus", "Campanus", "C")]
+    [InlineData("Koch", "Porphyry", "O")]
+    [InlineData("Regiomontanus", "Porphyry", "O")]
+    [InlineData("Campanus", "Porphyry", "O")]
+    public void Load_RequestedHouseSystems_AcceptsKochRegiomontanusCampanusAndPorphyryFallback(
+        string requested,
+        string reference,
+        string code)
+    {
+        var manifest = BenchmarkCaseManifestLoader.Load(
+            System.Text.Encoding.UTF8.GetBytes(HouseCaseJson(requested, reference, code)));
+
+        Assert.Equal(requested, manifest.Houses[0].RequestedSystem);
+        Assert.Equal(reference, manifest.Houses[0].ReferenceSystem);
+        Assert.Equal(code, manifest.Houses[0].SwissHouseSystemCode);
+    }
+
+    [Fact]
+    public void Load_PorphyryReference_MustUseCodeO()
+    {
+        var error = Assert.Throws<InvalidDataException>(() =>
+            BenchmarkCaseManifestLoader.Load(
+                System.Text.Encoding.UTF8.GetBytes(HouseCaseJson("Koch", "Porphyry", "K"))));
+
+        Assert.Contains("a Porphyry reference must use code O", error.Message, StringComparison.Ordinal);
+    }
+
+    [Theory]
+    [InlineData("Koch", "Koch", "P")]
+    [InlineData("Regiomontanus", "Regiomontanus", "C")]
+    [InlineData("Campanus", "Campanus", "K")]
+    [InlineData("Placidus", "Placidus", "O")]
+    public void Load_NonPorphyryReference_MustUseOwnCode(
+        string requested,
+        string reference,
+        string code)
+    {
+        var error = Assert.Throws<InvalidDataException>(() =>
+            BenchmarkCaseManifestLoader.Load(
+                System.Text.Encoding.UTF8.GetBytes(HouseCaseJson(requested, reference, code))));
+
+        Assert.Contains(
+            "a non-Porphyry reference must use its own code",
+            error.Message,
+            StringComparison.Ordinal);
+    }
+
+    private static string HouseCaseJson(string requested, string reference, string code) =>
+        $$"""
+            {
+              "schemaVersion": 2,
+              "datasetRevision": "test",
+              "positions": { "bodies": [], "epochs": [] },
+              "houses": [{
+                "id": "gate-case",
+                "utc": "2000-01-01T00:00:00Z",
+                "latitude": 51.5074,
+                "eastPositiveLongitude": -0.1278,
+                "requestedSystem": "{{requested}}",
+                "referenceSystem": "{{reference}}",
+                "swissHouseSystemCode": "{{code}}",
+                "toleranceArcsec": 3600
+              }],
+              "timings": [],
+              "historicalTimes": []
+            }
+            """;
 
     private static IEnumerable<string> DescendantPropertyNames(JsonElement element)
     {

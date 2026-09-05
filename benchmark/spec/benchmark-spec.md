@@ -2,10 +2,10 @@
 
 ## Frozen scope
 
-Dataset revision `calculation-benchmark-4` contains:
+Dataset revision `calculation-benchmark-5` contains:
 
 - 44 geocentric longitude comparisons: 11 bodies at four epochs;
-- 48 house-cusp comparisons: 12 cusps at four locations/epochs;
+- 228 house-cusp comparisons: 12 cusps at 19 location/epoch/system cases;
 - six event-time comparisons: three longitude crossings and three stations;
 - three historical civil-time compatibility cases;
 - one JPL Chiron state-vector binding.
@@ -74,11 +74,11 @@ documented Placidus polar fallback with Swiss Porphyry (`O`).
 
 Refresh executes `swetest -h`, requires exactly one `Version: 2.10.03` identification in memory,
 and archives only the deterministic one-line identification. It does not archive the help text.
-The four house artifacts remain exact, unmodified standard output from their recorded invocations.
+The nineteen house artifacts remain exact, unmodified standard output from their recorded invocations.
 
 ## House engine provenance
 
-Placidus is calculated by the kernel's own semi-arc iteration, audit-cleared and restored unchanged. Koch, Regiomontanus, and Campanus are calculated from geometric definitions: house circles through the horizon's north and south points intersected with the ecliptic, and Koch as ascendants at thirds of the MC's diurnal semi-arc. Swiss Ephemeris output values are their only reference. Benchmark house rows are Placidus-only; Koch, Regiomontanus, and Campanus are public kernel calculations covered by the 249-row Swiss-output oracle unit tests (0.01° tolerance) plus 48 fallback rows, not by benchmark rows, until swetest-backed rows are archived.
+Placidus is calculated by the kernel's own semi-arc iteration, audit-cleared and restored unchanged. Koch, Regiomontanus, and Campanus are calculated from geometric definitions: house circles through the horizon's north and south points intersected with the ecliptic, and Koch as ascendants at thirds of the MC's diurnal semi-arc. Swiss Ephemeris output values are their only reference. The benchmark archives swetest-backed Koch, Regiomontanus, and Campanus rows at the four published locations plus in-threshold high-latitude cases (Koch at Gothenburg; Regiomontanus and Campanus at Reykjavík). The Tromsø Koch, Regiomontanus, and Campanus rows test the documented polar fallback against Swiss Porphyry rather than K, R, or C accuracy. Oracle unit tests remain additional coverage and are not a substitute for those archived rows.
 
 ## Chiron identity
 
@@ -112,7 +112,7 @@ byte identity with the published result, normalized references, and source manif
 
 ## Interpretation of the current result
 
-All 44 position rows, 48 cusp rows, six timing rows, and three compatibility rows satisfy their
+All 44 position rows, 228 cusp rows, six timing rows, and three compatibility rows satisfy their
 predeclared tolerances. The declared limits are 60 arcseconds for ordinary positions, 1,800
 arcseconds for Chiron, 3,600 arcseconds for cusps, 90 minutes for crossings, and 360 minutes for
 stations. These deliberately conservative limits are regression and compatibility bounds, not
@@ -122,7 +122,7 @@ reported to 0.001 arcsecond or 0.001 minute as applicable, are the accuracy evid
 The median nominal position error is 1.861 arcseconds. The largest position error is Chiron at the
 1950 epoch, 74.756 arcseconds; Chiron is propagated by the public gravity simulation rather than a
 JPL DE/SPICE backend. Excluding that custom-body limitation would make the headline misleading. The
-largest cusp error is 11.797 arcseconds, and the largest event-time error is 15.258 minutes.
+largest cusp error is 12.035 arcseconds, and the largest event-time error is 15.258 minutes.
 
 The result is a reproducible measurement of the published algorithms and scope. It is not a claim
 of universal sub-arcsecond planetary accuracy, independent timezone accuracy, or equivalence to

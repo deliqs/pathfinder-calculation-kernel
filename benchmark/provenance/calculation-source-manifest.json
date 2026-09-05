@@ -41,7 +41,7 @@
     },
     {
       "path": "src/PathFinder.CalculationKernel/Houses/HouseCalculator.cs",
-      "sha256": "be187d43ac49ae0b2f2667ac41b045464717495621efe5ce25a04b2b0a55db32"
+      "sha256": "f70948d5da48f8701502dd5cbc9aefd3ef441979c264a50d7d9f484d46763f59"
     },
     {
       "path": "src/PathFinder.CalculationKernel/Houses/HouseCircleGeometry.cs",

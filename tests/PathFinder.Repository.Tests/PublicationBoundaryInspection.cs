@@ -42,9 +42,9 @@ public sealed partial class RepositoryBoundaryTests
         var buildPropertiesPath = Path.Combine(root, "Directory.Build.props");
         var buildProperties = XDocument.Load(buildPropertiesPath);
         var version = buildProperties.Descendants("Version").SingleOrDefault()?.Value;
-        if (version != "0.1.0")
+        if (version != "1.0.0")
         {
-            violations.Add($"Expected assembly and package version 0.1.0; found {version ?? "missing"}");
+            violations.Add($"Expected assembly and package version 1.0.0; found {version ?? "missing"}");
         }
 
         if (!File.Exists(kernelLockPath))
@@ -182,7 +182,7 @@ public sealed partial class RepositoryBoundaryTests
 
             foreach (var requiredSwissDescription in new[]
                      {
-                         "four archived Swiss stdout files",
+                         "nineteen archived Swiss stdout files",
                          "one minimal derived version-identification line"
                      })
             {

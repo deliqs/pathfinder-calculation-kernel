@@ -17,7 +17,7 @@ public sealed class FrozenReferenceBundleTests
             referenceRoot,
             cases);
 
-        Assert.Equal(63, verified.ArtifactCount);
+        Assert.Equal(78, verified.ArtifactCount);
         Assert.Equal(29, verified.Manifest.Jpl.Requests.Count);
         var timings = new List<JplTimingReference>();
         foreach (var request in verified.Manifest.Jpl.Requests)

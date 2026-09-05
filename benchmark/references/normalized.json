@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "datasetRevision": "calculation-benchmark-4",
+  "datasetRevision": "calculation-benchmark-5",
   "positions": [
     {
       "caseId": "sun-1950-01-01t00-00-00z",
@@ -775,6 +775,1086 @@
       "referenceSystem": "Porphyry",
       "cusp": 12,
       "longitudeDeg": 162.27997
+    },
+    {
+      "caseId": "london-j2000-koch",
+      "referenceSystem": "Koch",
+      "cusp": 1,
+      "longitudeDeg": 186.9366677
+    },
+    {
+      "caseId": "london-j2000-koch",
+      "referenceSystem": "Koch",
+      "cusp": 2,
+      "longitudeDeg": 215.5661197
+    },
+    {
+      "caseId": "london-j2000-koch",
+      "referenceSystem": "Koch",
+      "cusp": 3,
+      "longitudeDeg": 244.527521
+    },
+    {
+      "caseId": "london-j2000-koch",
+      "referenceSystem": "Koch",
+      "cusp": 4,
+      "longitudeDeg": 279.0388591
+    },
+    {
+      "caseId": "london-j2000-koch",
+      "referenceSystem": "Koch",
+      "cusp": 5,
+      "longitudeDeg": 309.614381
+    },
+    {
+      "caseId": "london-j2000-koch",
+      "referenceSystem": "Koch",
+      "cusp": 6,
+      "longitudeDeg": 338.1883414
+    },
+    {
+      "caseId": "london-j2000-koch",
+      "referenceSystem": "Koch",
+      "cusp": 7,
+      "longitudeDeg": 6.9366677
+    },
+    {
+      "caseId": "london-j2000-koch",
+      "referenceSystem": "Koch",
+      "cusp": 8,
+      "longitudeDeg": 35.5661197
+    },
+    {
+      "caseId": "london-j2000-koch",
+      "referenceSystem": "Koch",
+      "cusp": 9,
+      "longitudeDeg": 64.527521
+    },
+    {
+      "caseId": "london-j2000-koch",
+      "referenceSystem": "Koch",
+      "cusp": 10,
+      "longitudeDeg": 99.0388591
+    },
+    {
+      "caseId": "london-j2000-koch",
+      "referenceSystem": "Koch",
+      "cusp": 11,
+      "longitudeDeg": 129.614381
+    },
+    {
+      "caseId": "london-j2000-koch",
+      "referenceSystem": "Koch",
+      "cusp": 12,
+      "longitudeDeg": 158.1883414
+    },
+    {
+      "caseId": "london-j2000-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 1,
+      "longitudeDeg": 186.9366677
+    },
+    {
+      "caseId": "london-j2000-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 2,
+      "longitudeDeg": 209.3826322
+    },
+    {
+      "caseId": "london-j2000-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 3,
+      "longitudeDeg": 238.8963915
+    },
+    {
+      "caseId": "london-j2000-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 4,
+      "longitudeDeg": 279.0388591
+    },
+    {
+      "caseId": "london-j2000-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 5,
+      "longitudeDeg": 317.494623
+    },
+    {
+      "caseId": "london-j2000-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 6,
+      "longitudeDeg": 345.0883888
+    },
+    {
+      "caseId": "london-j2000-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 7,
+      "longitudeDeg": 6.9366677
+    },
+    {
+      "caseId": "london-j2000-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 8,
+      "longitudeDeg": 29.3826322
+    },
+    {
+      "caseId": "london-j2000-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 9,
+      "longitudeDeg": 58.8963915
+    },
+    {
+      "caseId": "london-j2000-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 10,
+      "longitudeDeg": 99.0388591
+    },
+    {
+      "caseId": "london-j2000-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 11,
+      "longitudeDeg": 137.494623
+    },
+    {
+      "caseId": "london-j2000-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 12,
+      "longitudeDeg": 165.0883888
+    },
+    {
+      "caseId": "london-j2000-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 1,
+      "longitudeDeg": 186.9366677
+    },
+    {
+      "caseId": "london-j2000-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 2,
+      "longitudeDeg": 220.7541484
+    },
+    {
+      "caseId": "london-j2000-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 3,
+      "longitudeDeg": 251.6165341
+    },
+    {
+      "caseId": "london-j2000-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 4,
+      "longitudeDeg": 279.0388591
+    },
+    {
+      "caseId": "london-j2000-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 5,
+      "longitudeDeg": 305.595085
+    },
+    {
+      "caseId": "london-j2000-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 6,
+      "longitudeDeg": 334.3790884
+    },
+    {
+      "caseId": "london-j2000-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 7,
+      "longitudeDeg": 6.9366677
+    },
+    {
+      "caseId": "london-j2000-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 8,
+      "longitudeDeg": 40.7541484
+    },
+    {
+      "caseId": "london-j2000-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 9,
+      "longitudeDeg": 71.6165341
+    },
+    {
+      "caseId": "london-j2000-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 10,
+      "longitudeDeg": 99.0388591
+    },
+    {
+      "caseId": "london-j2000-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 11,
+      "longitudeDeg": 125.595085
+    },
+    {
+      "caseId": "london-j2000-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 12,
+      "longitudeDeg": 154.3790884
+    },
+    {
+      "caseId": "new-york-eclipse-koch",
+      "referenceSystem": "Koch",
+      "cusp": 1,
+      "longitudeDeg": 135.4866406
+    },
+    {
+      "caseId": "new-york-eclipse-koch",
+      "referenceSystem": "Koch",
+      "cusp": 2,
+      "longitudeDeg": 162.122119
+    },
+    {
+      "caseId": "new-york-eclipse-koch",
+      "referenceSystem": "Koch",
+      "cusp": 3,
+      "longitudeDeg": 189.0410085
+    },
+    {
+      "caseId": "new-york-eclipse-koch",
+      "referenceSystem": "Koch",
+      "cusp": 4,
+      "longitudeDeg": 215.7843883
+    },
+    {
+      "caseId": "new-york-eclipse-koch",
+      "referenceSystem": "Koch",
+      "cusp": 5,
+      "longitudeDeg": 257.9149985
+    },
+    {
+      "caseId": "new-york-eclipse-koch",
+      "referenceSystem": "Koch",
+      "cusp": 6,
+      "longitudeDeg": 288.5004122
+    },
+    {
+      "caseId": "new-york-eclipse-koch",
+      "referenceSystem": "Koch",
+      "cusp": 7,
+      "longitudeDeg": 315.4866406
+    },
+    {
+      "caseId": "new-york-eclipse-koch",
+      "referenceSystem": "Koch",
+      "cusp": 8,
+      "longitudeDeg": 342.122119
+    },
+    {
+      "caseId": "new-york-eclipse-koch",
+      "referenceSystem": "Koch",
+      "cusp": 9,
+      "longitudeDeg": 9.0410085
+    },
+    {
+      "caseId": "new-york-eclipse-koch",
+      "referenceSystem": "Koch",
+      "cusp": 10,
+      "longitudeDeg": 35.7843883
+    },
+    {
+      "caseId": "new-york-eclipse-koch",
+      "referenceSystem": "Koch",
+      "cusp": 11,
+      "longitudeDeg": 77.9149985
+    },
+    {
+      "caseId": "new-york-eclipse-koch",
+      "referenceSystem": "Koch",
+      "cusp": 12,
+      "longitudeDeg": 108.5004122
+    },
+    {
+      "caseId": "new-york-eclipse-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 1,
+      "longitudeDeg": 135.4866406
+    },
+    {
+      "caseId": "new-york-eclipse-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 2,
+      "longitudeDeg": 158.2163981
+    },
+    {
+      "caseId": "new-york-eclipse-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 3,
+      "longitudeDeg": 183.1944669
+    },
+    {
+      "caseId": "new-york-eclipse-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 4,
+      "longitudeDeg": 215.7843883
+    },
+    {
+      "caseId": "new-york-eclipse-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 5,
+      "longitudeDeg": 255.0716543
+    },
+    {
+      "caseId": "new-york-eclipse-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 6,
+      "longitudeDeg": 289.4297415
+    },
+    {
+      "caseId": "new-york-eclipse-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 7,
+      "longitudeDeg": 315.4866406
+    },
+    {
+      "caseId": "new-york-eclipse-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 8,
+      "longitudeDeg": 338.2163981
+    },
+    {
+      "caseId": "new-york-eclipse-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 9,
+      "longitudeDeg": 3.1944669
+    },
+    {
+      "caseId": "new-york-eclipse-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 10,
+      "longitudeDeg": 35.7843883
+    },
+    {
+      "caseId": "new-york-eclipse-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 11,
+      "longitudeDeg": 75.0716543
+    },
+    {
+      "caseId": "new-york-eclipse-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 12,
+      "longitudeDeg": 109.4297415
+    },
+    {
+      "caseId": "new-york-eclipse-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 1,
+      "longitudeDeg": 135.4866406
+    },
+    {
+      "caseId": "new-york-eclipse-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 2,
+      "longitudeDeg": 163.8697195
+    },
+    {
+      "caseId": "new-york-eclipse-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 3,
+      "longitudeDeg": 189.3233882
+    },
+    {
+      "caseId": "new-york-eclipse-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 4,
+      "longitudeDeg": 215.7843883
+    },
+    {
+      "caseId": "new-york-eclipse-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 5,
+      "longitudeDeg": 246.7405719
+    },
+    {
+      "caseId": "new-york-eclipse-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 6,
+      "longitudeDeg": 281.9514403
+    },
+    {
+      "caseId": "new-york-eclipse-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 7,
+      "longitudeDeg": 315.4866406
+    },
+    {
+      "caseId": "new-york-eclipse-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 8,
+      "longitudeDeg": 343.8697195
+    },
+    {
+      "caseId": "new-york-eclipse-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 9,
+      "longitudeDeg": 9.3233882
+    },
+    {
+      "caseId": "new-york-eclipse-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 10,
+      "longitudeDeg": 35.7843883
+    },
+    {
+      "caseId": "new-york-eclipse-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 11,
+      "longitudeDeg": 66.7405719
+    },
+    {
+      "caseId": "new-york-eclipse-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 12,
+      "longitudeDeg": 101.9514403
+    },
+    {
+      "caseId": "sydney-historical-koch",
+      "referenceSystem": "Koch",
+      "cusp": 1,
+      "longitudeDeg": 344.2269452
+    },
+    {
+      "caseId": "sydney-historical-koch",
+      "referenceSystem": "Koch",
+      "cusp": 2,
+      "longitudeDeg": 14.0111318
+    },
+    {
+      "caseId": "sydney-historical-koch",
+      "referenceSystem": "Koch",
+      "cusp": 3,
+      "longitudeDeg": 43.4104345
+    },
+    {
+      "caseId": "sydney-historical-koch",
+      "referenceSystem": "Koch",
+      "cusp": 4,
+      "longitudeDeg": 72.7341259
+    },
+    {
+      "caseId": "sydney-historical-koch",
+      "referenceSystem": "Koch",
+      "cusp": 5,
+      "longitudeDeg": 105.4787519
+    },
+    {
+      "caseId": "sydney-historical-koch",
+      "referenceSystem": "Koch",
+      "cusp": 6,
+      "longitudeDeg": 134.8625548
+    },
+    {
+      "caseId": "sydney-historical-koch",
+      "referenceSystem": "Koch",
+      "cusp": 7,
+      "longitudeDeg": 164.2269452
+    },
+    {
+      "caseId": "sydney-historical-koch",
+      "referenceSystem": "Koch",
+      "cusp": 8,
+      "longitudeDeg": 194.0111318
+    },
+    {
+      "caseId": "sydney-historical-koch",
+      "referenceSystem": "Koch",
+      "cusp": 9,
+      "longitudeDeg": 223.4104345
+    },
+    {
+      "caseId": "sydney-historical-koch",
+      "referenceSystem": "Koch",
+      "cusp": 10,
+      "longitudeDeg": 252.7341259
+    },
+    {
+      "caseId": "sydney-historical-koch",
+      "referenceSystem": "Koch",
+      "cusp": 11,
+      "longitudeDeg": 285.4787519
+    },
+    {
+      "caseId": "sydney-historical-koch",
+      "referenceSystem": "Koch",
+      "cusp": 12,
+      "longitudeDeg": 314.8625548
+    },
+    {
+      "caseId": "sydney-historical-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 1,
+      "longitudeDeg": 344.2269452
+    },
+    {
+      "caseId": "sydney-historical-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 2,
+      "longitudeDeg": 9.8158068
+    },
+    {
+      "caseId": "sydney-historical-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 3,
+      "longitudeDeg": 38.7213189
+    },
+    {
+      "caseId": "sydney-historical-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 4,
+      "longitudeDeg": 72.7341259
+    },
+    {
+      "caseId": "sydney-historical-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 5,
+      "longitudeDeg": 107.7044151
+    },
+    {
+      "caseId": "sydney-historical-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 6,
+      "longitudeDeg": 138.0694701
+    },
+    {
+      "caseId": "sydney-historical-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 7,
+      "longitudeDeg": 164.2269452
+    },
+    {
+      "caseId": "sydney-historical-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 8,
+      "longitudeDeg": 189.8158068
+    },
+    {
+      "caseId": "sydney-historical-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 9,
+      "longitudeDeg": 218.7213189
+    },
+    {
+      "caseId": "sydney-historical-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 10,
+      "longitudeDeg": 252.7341259
+    },
+    {
+      "caseId": "sydney-historical-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 11,
+      "longitudeDeg": 287.7044151
+    },
+    {
+      "caseId": "sydney-historical-regiomontanus",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 12,
+      "longitudeDeg": 318.0694701
+    },
+    {
+      "caseId": "sydney-historical-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 1,
+      "longitudeDeg": 344.2269452
+    },
+    {
+      "caseId": "sydney-historical-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 2,
+      "longitudeDeg": 14.1378176
+    },
+    {
+      "caseId": "sydney-historical-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 3,
+      "longitudeDeg": 43.3980388
+    },
+    {
+      "caseId": "sydney-historical-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 4,
+      "longitudeDeg": 72.7341259
+    },
+    {
+      "caseId": "sydney-historical-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 5,
+      "longitudeDeg": 102.8033073
+    },
+    {
+      "caseId": "sydney-historical-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 6,
+      "longitudeDeg": 133.5564439
+    },
+    {
+      "caseId": "sydney-historical-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 7,
+      "longitudeDeg": 164.2269452
+    },
+    {
+      "caseId": "sydney-historical-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 8,
+      "longitudeDeg": 194.1378176
+    },
+    {
+      "caseId": "sydney-historical-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 9,
+      "longitudeDeg": 223.3980388
+    },
+    {
+      "caseId": "sydney-historical-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 10,
+      "longitudeDeg": 252.7341259
+    },
+    {
+      "caseId": "sydney-historical-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 11,
+      "longitudeDeg": 282.8033073
+    },
+    {
+      "caseId": "sydney-historical-campanus",
+      "referenceSystem": "Campanus",
+      "cusp": 12,
+      "longitudeDeg": 313.5564439
+    },
+    {
+      "caseId": "tromso-polar-koch",
+      "referenceSystem": "Porphyry",
+      "cusp": 1,
+      "longitudeDeg": 189.5926397
+    },
+    {
+      "caseId": "tromso-polar-koch",
+      "referenceSystem": "Porphyry",
+      "cusp": 2,
+      "longitudeDeg": 222.27997
+    },
+    {
+      "caseId": "tromso-polar-koch",
+      "referenceSystem": "Porphyry",
+      "cusp": 3,
+      "longitudeDeg": 254.9673003
+    },
+    {
+      "caseId": "tromso-polar-koch",
+      "referenceSystem": "Porphyry",
+      "cusp": 4,
+      "longitudeDeg": 287.6546307
+    },
+    {
+      "caseId": "tromso-polar-koch",
+      "referenceSystem": "Porphyry",
+      "cusp": 5,
+      "longitudeDeg": 314.9673003
+    },
+    {
+      "caseId": "tromso-polar-koch",
+      "referenceSystem": "Porphyry",
+      "cusp": 6,
+      "longitudeDeg": 342.27997
+    },
+    {
+      "caseId": "tromso-polar-koch",
+      "referenceSystem": "Porphyry",
+      "cusp": 7,
+      "longitudeDeg": 9.5926397
+    },
+    {
+      "caseId": "tromso-polar-koch",
+      "referenceSystem": "Porphyry",
+      "cusp": 8,
+      "longitudeDeg": 42.27997
+    },
+    {
+      "caseId": "tromso-polar-koch",
+      "referenceSystem": "Porphyry",
+      "cusp": 9,
+      "longitudeDeg": 74.9673003
+    },
+    {
+      "caseId": "tromso-polar-koch",
+      "referenceSystem": "Porphyry",
+      "cusp": 10,
+      "longitudeDeg": 107.6546307
+    },
+    {
+      "caseId": "tromso-polar-koch",
+      "referenceSystem": "Porphyry",
+      "cusp": 11,
+      "longitudeDeg": 134.9673003
+    },
+    {
+      "caseId": "tromso-polar-koch",
+      "referenceSystem": "Porphyry",
+      "cusp": 12,
+      "longitudeDeg": 162.27997
+    },
+    {
+      "caseId": "tromso-polar-regiomontanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 1,
+      "longitudeDeg": 189.5926397
+    },
+    {
+      "caseId": "tromso-polar-regiomontanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 2,
+      "longitudeDeg": 222.27997
+    },
+    {
+      "caseId": "tromso-polar-regiomontanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 3,
+      "longitudeDeg": 254.9673003
+    },
+    {
+      "caseId": "tromso-polar-regiomontanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 4,
+      "longitudeDeg": 287.6546307
+    },
+    {
+      "caseId": "tromso-polar-regiomontanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 5,
+      "longitudeDeg": 314.9673003
+    },
+    {
+      "caseId": "tromso-polar-regiomontanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 6,
+      "longitudeDeg": 342.27997
+    },
+    {
+      "caseId": "tromso-polar-regiomontanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 7,
+      "longitudeDeg": 9.5926397
+    },
+    {
+      "caseId": "tromso-polar-regiomontanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 8,
+      "longitudeDeg": 42.27997
+    },
+    {
+      "caseId": "tromso-polar-regiomontanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 9,
+      "longitudeDeg": 74.9673003
+    },
+    {
+      "caseId": "tromso-polar-regiomontanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 10,
+      "longitudeDeg": 107.6546307
+    },
+    {
+      "caseId": "tromso-polar-regiomontanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 11,
+      "longitudeDeg": 134.9673003
+    },
+    {
+      "caseId": "tromso-polar-regiomontanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 12,
+      "longitudeDeg": 162.27997
+    },
+    {
+      "caseId": "tromso-polar-campanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 1,
+      "longitudeDeg": 189.5926397
+    },
+    {
+      "caseId": "tromso-polar-campanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 2,
+      "longitudeDeg": 222.27997
+    },
+    {
+      "caseId": "tromso-polar-campanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 3,
+      "longitudeDeg": 254.9673003
+    },
+    {
+      "caseId": "tromso-polar-campanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 4,
+      "longitudeDeg": 287.6546307
+    },
+    {
+      "caseId": "tromso-polar-campanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 5,
+      "longitudeDeg": 314.9673003
+    },
+    {
+      "caseId": "tromso-polar-campanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 6,
+      "longitudeDeg": 342.27997
+    },
+    {
+      "caseId": "tromso-polar-campanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 7,
+      "longitudeDeg": 9.5926397
+    },
+    {
+      "caseId": "tromso-polar-campanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 8,
+      "longitudeDeg": 42.27997
+    },
+    {
+      "caseId": "tromso-polar-campanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 9,
+      "longitudeDeg": 74.9673003
+    },
+    {
+      "caseId": "tromso-polar-campanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 10,
+      "longitudeDeg": 107.6546307
+    },
+    {
+      "caseId": "tromso-polar-campanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 11,
+      "longitudeDeg": 134.9673003
+    },
+    {
+      "caseId": "tromso-polar-campanus",
+      "referenceSystem": "Porphyry",
+      "cusp": 12,
+      "longitudeDeg": 162.27997
+    },
+    {
+      "caseId": "gothenburg-koch-midsummer",
+      "referenceSystem": "Koch",
+      "cusp": 1,
+      "longitudeDeg": 187.8514454
+    },
+    {
+      "caseId": "gothenburg-koch-midsummer",
+      "referenceSystem": "Koch",
+      "cusp": 2,
+      "longitudeDeg": 216.0875116
+    },
+    {
+      "caseId": "gothenburg-koch-midsummer",
+      "referenceSystem": "Koch",
+      "cusp": 3,
+      "longitudeDeg": 244.6379909
+    },
+    {
+      "caseId": "gothenburg-koch-midsummer",
+      "referenceSystem": "Koch",
+      "cusp": 4,
+      "longitudeDeg": 281.1742558
+    },
+    {
+      "caseId": "gothenburg-koch-midsummer",
+      "referenceSystem": "Koch",
+      "cusp": 5,
+      "longitudeDeg": 311.3113696
+    },
+    {
+      "caseId": "gothenburg-koch-midsummer",
+      "referenceSystem": "Koch",
+      "cusp": 6,
+      "longitudeDeg": 339.4401248
+    },
+    {
+      "caseId": "gothenburg-koch-midsummer",
+      "referenceSystem": "Koch",
+      "cusp": 7,
+      "longitudeDeg": 7.8514454
+    },
+    {
+      "caseId": "gothenburg-koch-midsummer",
+      "referenceSystem": "Koch",
+      "cusp": 8,
+      "longitudeDeg": 36.0875116
+    },
+    {
+      "caseId": "gothenburg-koch-midsummer",
+      "referenceSystem": "Koch",
+      "cusp": 9,
+      "longitudeDeg": 64.6379909
+    },
+    {
+      "caseId": "gothenburg-koch-midsummer",
+      "referenceSystem": "Koch",
+      "cusp": 10,
+      "longitudeDeg": 101.1742558
+    },
+    {
+      "caseId": "gothenburg-koch-midsummer",
+      "referenceSystem": "Koch",
+      "cusp": 11,
+      "longitudeDeg": 131.3113696
+    },
+    {
+      "caseId": "gothenburg-koch-midsummer",
+      "referenceSystem": "Koch",
+      "cusp": 12,
+      "longitudeDeg": 159.4401248
+    },
+    {
+      "caseId": "reykjavik-regiomontanus-midsummer",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 1,
+      "longitudeDeg": 167.5016894
+    },
+    {
+      "caseId": "reykjavik-regiomontanus-midsummer",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 2,
+      "longitudeDeg": 185.0550445
+    },
+    {
+      "caseId": "reykjavik-regiomontanus-midsummer",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 3,
+      "longitudeDeg": 208.6843417
+    },
+    {
+      "caseId": "reykjavik-regiomontanus-midsummer",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 4,
+      "longitudeDeg": 249.879653
+    },
+    {
+      "caseId": "reykjavik-regiomontanus-midsummer",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 5,
+      "longitudeDeg": 298.6989365
+    },
+    {
+      "caseId": "reykjavik-regiomontanus-midsummer",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 6,
+      "longitudeDeg": 328.4375685
+    },
+    {
+      "caseId": "reykjavik-regiomontanus-midsummer",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 7,
+      "longitudeDeg": 347.5016894
+    },
+    {
+      "caseId": "reykjavik-regiomontanus-midsummer",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 8,
+      "longitudeDeg": 5.0550445
+    },
+    {
+      "caseId": "reykjavik-regiomontanus-midsummer",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 9,
+      "longitudeDeg": 28.6843417
+    },
+    {
+      "caseId": "reykjavik-regiomontanus-midsummer",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 10,
+      "longitudeDeg": 69.879653
+    },
+    {
+      "caseId": "reykjavik-regiomontanus-midsummer",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 11,
+      "longitudeDeg": 118.6989365
+    },
+    {
+      "caseId": "reykjavik-regiomontanus-midsummer",
+      "referenceSystem": "Regiomontanus",
+      "cusp": 12,
+      "longitudeDeg": 148.4375685
+    },
+    {
+      "caseId": "reykjavik-campanus-midsummer",
+      "referenceSystem": "Campanus",
+      "cusp": 1,
+      "longitudeDeg": 167.5016894
+    },
+    {
+      "caseId": "reykjavik-campanus-midsummer",
+      "referenceSystem": "Campanus",
+      "cusp": 2,
+      "longitudeDeg": 202.0197879
+    },
+    {
+      "caseId": "reykjavik-campanus-midsummer",
+      "referenceSystem": "Campanus",
+      "cusp": 3,
+      "longitudeDeg": 227.6506811
+    },
+    {
+      "caseId": "reykjavik-campanus-midsummer",
+      "referenceSystem": "Campanus",
+      "cusp": 4,
+      "longitudeDeg": 249.879653
+    },
+    {
+      "caseId": "reykjavik-campanus-midsummer",
+      "referenceSystem": "Campanus",
+      "cusp": 5,
+      "longitudeDeg": 274.5288099
+    },
+    {
+      "caseId": "reykjavik-campanus-midsummer",
+      "referenceSystem": "Campanus",
+      "cusp": 6,
+      "longitudeDeg": 307.3742596
+    },
+    {
+      "caseId": "reykjavik-campanus-midsummer",
+      "referenceSystem": "Campanus",
+      "cusp": 7,
+      "longitudeDeg": 347.5016894
+    },
+    {
+      "caseId": "reykjavik-campanus-midsummer",
+      "referenceSystem": "Campanus",
+      "cusp": 8,
+      "longitudeDeg": 22.0197879
+    },
+    {
+      "caseId": "reykjavik-campanus-midsummer",
+      "referenceSystem": "Campanus",
+      "cusp": 9,
+      "longitudeDeg": 47.6506811
+    },
+    {
+      "caseId": "reykjavik-campanus-midsummer",
+      "referenceSystem": "Campanus",
+      "cusp": 10,
+      "longitudeDeg": 69.879653
+    },
+    {
+      "caseId": "reykjavik-campanus-midsummer",
+      "referenceSystem": "Campanus",
+      "cusp": 11,
+      "longitudeDeg": 94.5288099
+    },
+    {
+      "caseId": "reykjavik-campanus-midsummer",
+      "referenceSystem": "Campanus",
+      "cusp": 12,
+      "longitudeDeg": 127.3742596
     }
   ],
   "timings": [

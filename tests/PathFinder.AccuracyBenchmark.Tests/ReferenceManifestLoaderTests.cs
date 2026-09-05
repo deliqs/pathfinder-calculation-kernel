@@ -15,7 +15,7 @@ public sealed class ReferenceManifestLoaderTests
 
         var verified = ReferenceManifestLoader.Load(fixture.ManifestBytes, fixture.Root, fixture.Cases);
 
-        Assert.Equal("calculation-benchmark-4", verified.Manifest.DatasetRevision);
+        Assert.Equal("calculation-benchmark-5", verified.Manifest.DatasetRevision);
         Assert.Equal("Version: 2.10.03\n", Encoding.UTF8.GetString(
             verified.Read(verified.Manifest.Swiss.VersionOutput)));
         Assert.Equal("house  1       123.456789\n", Encoding.UTF8.GetString(
@@ -26,7 +26,7 @@ public sealed class ReferenceManifestLoaderTests
         Assert.Equal("make swetest", verified.Manifest.Swiss.BuildCommand);
         Assert.Matches("^[0-9a-f]{64}$", verified.Manifest.Swiss.ExecutableSha256);
         Assert.Equal("C", verified.Manifest.Swiss.Environment["LC_ALL"]);
-        Assert.Equal(63, verified.ArtifactCount);
+        Assert.Equal(78, verified.ArtifactCount);
     }
 
     [Theory]
@@ -217,7 +217,7 @@ public sealed class ReferenceManifestLoaderTests
             }).ToArray();
             var manifest = new ReferenceManifest(
                 2,
-                "calculation-benchmark-4",
+                "calculation-benchmark-5",
                 new JplReferenceSource(
                     HorizonsQueryBuilder.ApiSource,
                     HorizonsQueryBuilder.ApiVersion,

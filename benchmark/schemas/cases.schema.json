@@ -53,9 +53,9 @@
         "utc": { "type": "string", "format": "date-time" },
         "latitude": { "type": "number", "minimum": -90, "maximum": 90 },
         "eastPositiveLongitude": { "type": "number", "minimum": -180, "maximum": 180 },
-        "requestedSystem": { "const": "Placidus" },
-        "referenceSystem": { "enum": ["Placidus", "Porphyry"] },
-        "swissHouseSystemCode": { "enum": ["P", "O"] },
+        "requestedSystem": { "enum": ["Placidus", "Koch", "Regiomontanus", "Campanus"] },
+        "referenceSystem": { "enum": ["Placidus", "Koch", "Regiomontanus", "Campanus", "Porphyry"] },
+        "swissHouseSystemCode": { "enum": ["P", "K", "R", "C", "O"] },
         "toleranceArcsec": { "type": "number", "exclusiveMinimum": 0 }
       }
     },
