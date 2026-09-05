@@ -12,7 +12,7 @@ Reproduce against a tag:
 git clone --branch <tag> --depth 1 https://github.com/deliqs/pathfinder-calculation-kernel.git
 ```
 
-Compare `benchmark/results/results.sha256` with the certification bundle. Verify a downloaded nupkg SHA-256 against `SHA256SUMS`.
+Compare `benchmark/results/results.sha256` with the certification bundle. The nupkg attached to the GitHub release matches `SHA256SUMS` byte for byte; the copy served by nuget.org carries nuget.org's repository signature (`.signature.p7s`) and therefore hashes differently, while every other entry in the package is identical.
 
 ## Boundary
 
